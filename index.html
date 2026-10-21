@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-HK" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no, viewport-fit=cover">
+  
+  <meta name="google-site-verification" content="JZ5UohX-CcP_fQV0_DI9VadkKY4ZoTTkUifL88-fIcY">
+
+  <!-- 🏢 基礎 SEO 標籤 -->
+  <title>EnterpriseDemo-Attendance | 企業非營運時段考勤治理架構展示</title>
+  <meta name="description" content="Enterprise Demo 專案展示如何以 Microsoft 365 原生生態，構建零額外授權的考勤與防虛報內控引擎，落實企業管治與數位審計。">
+  <meta name="keywords" content="Enterprise Demo, Governance as Code, 考勤治理, 內部審計, ISO 27001, ISO 45001, Power Automate, SharePoint Online, 數位轉型, 零額外授權">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://jackylawck.github.io/EnterpriseDemo-NOTAS/">
+
+  <!-- 👤 作者資訊 -->
+  <meta name="author" content="Jacky Law">
+  <meta property="article:author" content="Jacky Law">
+
+  <!-- 🌐 Open Graph 社交卡片 -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jackylawck.github.io/EnterpriseDemo-NOTAS/">
+  <meta property="og:title" content="EnterpriseDemo: 企業考勤治理架構展示">
+  <meta property="og:description" content="零額外授權成本、多級審批與目錄級防呆。展示如何利用 M365 原生生態落實工時合規與全鏈路審計追蹤。">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="EnterpriseDemo 考勤系統架構圖">
+  <meta property="og:locale" content="zh_HK">
+  <meta property="og:site_name" content="Enterprise Governance Demo">
+
+  <!-- 🐦 Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EnterpriseDemo-Attendance | 企業架構展示">
+  <meta name="twitter:description" content="零額外授權多級考勤審批鏈，整合目錄防呆與不可篡改時間戳記，展示合規與 ISO 治理標準。">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop">
+
+  <!-- 📱 PWA 適配 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="EnterpriseDemo">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#070f1e">
+  <meta name="application-name" content="EnterpriseDemo 考勤治理系統">
+
+  <!-- 🛡️ 安全標頭 CSP 防禦 -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data: https://img.shields.io https://images.unsplash.com;
+    font-src 'self' data:;
+    connect-src 'self';
+    media-src 'none';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'none';
+    frame-ancestors 'none';
+  ">
+  <meta http-equiv="Permissions-Policy" content="accelerometer=(), gyroscope=(), microphone=(), camera=(), geolocation=(), payment=()">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- 🏷️ Schema.org 結構化資料 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://github.com/jackylawck/#author",
+        "name": "Jacky Law",
+        "jobTitle": "Corporate Governance & Architecture Advisor",
+        "url": "https://github.com/jackylawck"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://jackylawck.github.io/EnterpriseDemo-NOTAS/#software",
+        "name": "EnterpriseDemo: 非營運時段考勤治理架構",
+        "alternateName": "Non-Operating Time Attendance System (Demo-Form)",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Microsoft 365, Web Browser",
+        "author": {
+          "@id": "https://github.com/jackylawck/#author"
+        },
+        "description": "企業級零額外授權非營運時段出勤審批與反虛報治理引擎展示，符合 ISO 27001 / 45001 架構規範。"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #0078d4;
+      --primary-dark: #004578;
+      --bg-dark: #070f1e;
+      --card-bg: rgba(16, 29, 51, 0.75);
+      --card-border: rgba(0, 120, 212, 0.28);
+      --accent-green: #107c41;
+      --accent-purple: #8764b8;
+      --accent-amber: #d83b01;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang HK", "Microsoft JhengHei", sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(0, 120, 212, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(16, 124, 65, 0.12) 0px, transparent 50%);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 24px 16px;
+      min-height: 100vh;
+    }
+    .container { max-width: 1080px; margin: 0 auto; }
+    header { text-align: center; padding: 40px 16px 28px; }
+    .corp-badge {
+      display: inline-block;
+      background: rgba(0, 120, 212, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(96, 165, 250, 0.3);
+      padding: 4px 14px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+    h1 { font-size: 2.1rem; font-weight: 800; color: #ffffff; margin-bottom: 8px; letter-spacing: -0.02em; }
+    .subtitle { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 20px; }
+    .badge-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 24px; }
+    .badge-bar img { height: 22px; }
+    .tagline-box {
+      background: var(--card-bg);
+      border-left: 4px solid var(--primary);
+      border-radius: 4px;
+      padding: 16px 20px;
+      max-width: 840px;
+      margin: 0 auto 36px;
+      text-align: left;
+      font-size: 0.98rem;
+    }
+    .tagline-box strong { color: #93c5fd; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 28px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+    .card h2 {
+      font-size: 1.35rem;
+      color: #ffffff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    p { color: #d1d5db; font-size: 0.96rem; margin-bottom: 14px; }
+    .disclaimer { border-left: 4px solid var(--accent-amber); background: rgba(216, 59, 1, 0.08); padding: 14px; border-radius: 4px; color: #ffbba6; font-size: 0.85rem; margin-top: 20px; }
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin: 20px 0;
+    }
+    .flow-node {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 14px;
+    }
+    .flow-node.highlight {
+      border-color: rgba(16, 124, 65, 0.6);
+      background: rgba(16, 124, 65, 0.08);
+    }
+    .flow-step { font-size: 0.72rem; font-weight: 700; color: #60a5fa; text-transform: uppercase; margin-bottom: 4px; }
+    .flow-title { font-size: 0.92rem; font-weight: 600; color: #ffffff; margin-bottom: 6px; }
+    .flow-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
+    .table-container { width: 100%; overflow-x: auto; margin-top: 14px; }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.88rem; }
+    th {
+      background: rgba(0, 120, 212, 0.2);
+      color: #93c5fd;
+      padding: 12px 14px;
+      font-weight: 600;
+      border-bottom: 1px solid var(--card-border);
+    }
+    td { padding: 12px 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: #d1d5db; }
+    tr:hover td { background: rgba(255, 255, 255, 0.02); }
+    .role-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .tech-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .tech-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .tech-item h3 { font-size: 0.95rem; color: #60a5fa; margin-bottom: 8px; }
+    .tech-item p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0; }
+    .callout {
+      border-left: 4px solid var(--accent-green);
+      background: rgba(16, 124, 65, 0.08);
+      padding: 14px 18px;
+      border-radius: 4px;
+      font-size: 0.88rem;
+      color: #d1fae5;
+      margin: 14px 0;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 16px 20px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 40px;
+    }
+    footer a { color: #60a5fa; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    @media (max-width: 640px) {
+      h1 { font-size: 1.6rem; }
+      .card { padding: 18px; }
+      body { padding: 16px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="corp-badge">Enterprise Architecture Demo</div>
+      <h1>EnterpriseDemo: 考勤治理與審計系統</h1>
+      <div class="subtitle">Non-Operating Time Attendance System (Governance-as-Code)</div>
+      
+      <div class="badge-bar">
+        <a href="https://github.com/jackylawck/EnterpriseDemo-NOTAS" target="_blank" rel="noopener">
+          <img src="https://img.shields.io/badge/System-EnterpriseDemo-0078D4.svg" alt="System EnterpriseDemo">
+        </a>
+        <img src="https://img.shields.io/badge/Compliance-Internal%20Audit-green.svg" alt="Internal Audit">
+        <img src="https://img.shields.io/badge/Standard-ISO%2027001%20%7C%2027701-purple.svg" alt="ISO 27001 / 27701">
+        <img src="https://img.shields.io/badge/Management-ISO%209001%20%7C%2045001-orange.svg" alt="ISO 9001 / 45001">
+        <img src="https://img.shields.io/badge/Stack-Power%20Automate%20%7C%20SharePoint-008272.svg" alt="M365 Low Code">
+      </div>
+
+      <div class="tagline-box">
+        <strong>"Zero-License, Multi-Tier Attendance & Anti-Fraud Governance Engine"</strong><br>
+        「零額外授權成本、多級審批與數位審計鏈之考勤治理架構展示」
+      </div>
+    </header>
+
+    <main>
+      <!-- 專案摘要 -->
+      <section class="card">
+        <h2>📌 專案摘要 (Executive Summary)</h2>
+        <p><strong>This repository is an Enterprise Demo showcasing how to implement Governance-as-Code using M365 and Zero-Trust architecture.</strong></p>
+        <p>本專案將傳統紙本「非營運時段上班記錄表 (Demo-Form)」全面數位化，以 <strong>Microsoft 365 原生生態</strong> 為基礎架構，在<strong>零額外 Power Platform 授權費用</strong>下，整合目錄防呆、動態多級審批、HKT 標準時間戳與全鏈路閉環通報，全面對齊 ISO 國際管理體系。</p>
+        
+        <div class="disclaimer">
+          <strong>⚠️ 免責聲明 (Disclaimer)</strong><br>
+          This project is a generic enterprise demo created for academic and architectural research. All data, organizational names, and endpoints used are fictional or generic placeholders. (本專案為學術與架構研究用途之通用企業展示。系統內所有數據及組織名稱均為虛構佔位符。)
+        </div>
+      </section>
+
+      <!-- 治理架構 -->
+      <section class="card">
+        <h2>🏛️ 流程生命週期與治理閉環 (Workflow Lifecycle)</h2>
+        <div class="flow-grid">
+          <div class="flow-node">
+            <div class="flow-step">1. 填報立案</div>
+            <div class="flow-title">Forms 身分鎖定</div>
+            <div class="flow-desc">登入驗證、建立流水單號並回寫 SharePoint 核心清單。</div>
+          </div>
+          <div class="flow-node">
+            <div class="flow-step">2. 目錄防呆</div>
+            <div class="flow-title">主管電郵驗證</div>
+            <div class="flow-desc">向 Entra ID 核實主管身分；異常則自動攔截退回，防止流程死結。</div>
+          </div>
+          <div class="flow-node">
+            <div class="flow-step">3. 部門審批</div>
+            <div class="flow-title">第 1 棒主管審核</div>
+            <div class="flow-desc">核實申報必要性；駁回即時通知，通過則推進至 HR 審查。</div>
+          </div>
+          <div class="flow-node">
+            <div class="flow-step">4. 人資合規</div>
+            <div class="flow-title">第 2 棒 HR 審核</div>
+            <div class="flow-desc">核對勞工條例工時規範與事由合理性，呈交高階營運主管批核。</div>
+          </div>
+          <div class="flow-node highlight">
+            <div class="flow-step">5. 決策閉環</div>
+            <div class="flow-title">第 3 棒 COD 批核</div>
+            <div class="flow-desc">高層核准歸檔，自動派發結案公函並抄送 HR 留存，完成審計鏈。</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 業務矩陣表格 -->
+      <section class="card">
+        <h2>📋 業務治理矩陣 (Governance Matrix)</h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>階段</th>
+                <th>責任角色</th>
+                <th>承載技術</th>
+                <th>處置動作與審計紀錄</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>填報立案</strong></td>
+                <td><span class="role-badge">申報員工</span></td>
+                <td>Microsoft Forms + SharePoint</td>
+                <td>限定內部帳號登入，生成唯一單號（<code>OT-YYYYMMDD-ID</code>），初始狀態為 <code>主管審批中</code>。</td>
+              </tr>
+              <tr>
+                <td><strong>目錄防呆</strong></td>
+                <td><span class="role-badge">自動引擎</span></td>
+                <td>Office 365 Users (`Get user profile`)</td>
+                <td>自動驗證主管電郵是否合法存在；無效則經由 Scope 攔截自動標記 <code>已駁回</code> 並發信。</td>
+              </tr>
+              <tr>
+                <td><strong>收件確認</strong></td>
+                <td><span class="role-badge">自動引擎</span></td>
+                <td>Outlook (Office 365)</td>
+                <td>目錄驗證通過後發信告知申報單號與審批主管姓名，落實勞資溝通透明度。</td>
+              </tr>
+              <tr>
+                <td><strong>第 1 棒主管審批</strong></td>
+                <td><span class="role-badge">部門主管</span></td>
+                <td>Outlook / Teams Approvals</td>
+                <td>動態派發至部門主管；駁回即通知結案，通過則將狀態推進至 <code>HR審核中</code>。</td>
+              </tr>
+              <tr>
+                <td><strong>第 2 棒 HR 審核</strong></td>
+                <td><span class="role-badge">人力資源部</span></td>
+                <td>Outlook / Teams Approvals</td>
+                <td>人資部門進行法定合規覆核；通過則將狀態推進至 <code>COD審批中</code>。</td>
+              </tr>
+              <tr>
+                <td><strong>第 3 棒 COD 批核</strong></td>
+                <td><span class="role-badge">高階主管</span></td>
+                <td>Outlook / Teams Approvals</td>
+                <td>營運最高層最終核准，系統回寫狀態為 <code>已批准歸檔</code> 並蓋印時間戳。</td>
+              </tr>
+              <tr>
+                <td><strong>閉環通報</strong></td>
+                <td><span class="role-badge">系統閉環</span></td>
+                <td>Outlook (Office 365)</td>
+                <td>發送結案公函給申報員工，並副本 (Cc) 備查信箱，完成閉環。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 合規與標準對齊 -->
+      <section class="card">
+        <h2>⚖️ 法律法規與 ISO 標準合規 (Regulatory & ISO Standards)</h2>
+        <div class="callout">
+          <strong>合規適用性聲明 (Statutory Notice)</strong>：本系統展示架構依循常見個人隱私條例保護原則（如資料最小化、保存期限與加密防護）。
+        </div>
+        <div class="tech-list">
+          <div class="tech-item">
+            <h3>ISO/IEC 27001 & 27701 (資安與隱私)</h3>
+            <p>清單執行 RBAC 最小權限原則，外部完全隔離；審核歷史記錄具備不可篡改性與標準時區審計軌跡。</p>
+          </div>
+          <div class="tech-item">
+            <h3>ISO 9001:2015 (品質管治)</h3>
+            <p>落實條款 7.5 成文資訊管理，取代易丟失、不可追溯之傳統紙本，提升跨部門審批一致性與效率。</p>
+          </div>
+          <div class="tech-item">
+            <h3>ISO 45001:2018 (職安健體系)</h3>
+            <p>落實條款 6.1 & 8.1 危害辨識，精準監控非營運時段之單獨作業安全與超時工作健康風險。</p>
+          </div>
+          <div class="tech-item">
+            <h3>豁免範疇 (Exemption Notice)</h3>
+            <p>本系統為確定性規則引擎，無機器學習模型，<strong>宣告排除 EU AI Act / ISO 42001</strong>；僅展示企業內部架構，<strong>宣告排除境外跨境傳輸法規</strong>。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 技術架構 -->
+      <section class="card">
+        <h2>⚙️ 技術亮點 (Technical Implementation)</h2>
+        <div class="tech-list">
+          <div class="tech-item">
+            <h3>1. 零額外授權架構 (Zero-License)</h3>
+            <p>全流程僅調用 M365 商業版/企業版標準連接器，無需採購任何 Power Platform Premium 授權。</p>
+          </div>
+          <div class="tech-item">
+            <h3>2. 目錄級異常攔截 (Exception Handling)</h3>
+            <p>利用 Scope 錯誤捕獲配置（Run after has failed），主動攔截錯誤主管電郵，保障流程永不掛起。</p>
+          </div>
+          <div class="tech-item">
+            <h3>3. 動態多階狀態機 (State Machine)</h3>
+            <p>以明確狀態驅動審批生命週期，完整記錄每一階之 Action、Comments 與時間戳記。</p>
+          </div>
+          <div class="tech-item">
+            <h3>4. 時區正規化 (Timezone Normalization)</h3>
+            <p>全系統強制透過 Convert time zone 轉為本地標準時間，杜絕雲端預設 UTC 引發之審計爭議。</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Enterprise Architecture Demo | 系統架構展示設計：<a href="https://github.com/jackylawck" target="_blank" rel="noopener">Jacky Law</a></p>
+      <p style="margin-top: 6px; font-size: 0.8rem;">專為考勤內控審計與無紙化治理打造 (For Academic & Architectural Demo Purposes Only)</p>
+    </footer>
+  </div>
+
+</body>
+</html>
+```<FollowUp>
+- 網頁端 `index.html` 洗白已完成，是否需要我提供對應的 Markdown 文件（如 `docs/PICS_Demo-Form.md`），以替換之前針對特定企業撰寫的私隱聲明文件？
+</FollowUp>
