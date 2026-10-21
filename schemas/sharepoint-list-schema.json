@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/sharepoint/list-schema.json",
+  "listName": "Demo_Non_Operating_OT",
+  "description": "企業非營運時段考勤治理核心清單 (Demo-Form)",
+  "internalCompliance": [
+    "Generic Privacy Regulations (e.g. PDPO/GDPR)",
+    "Labor Law Compliance Demo",
+    "ISO 27001",
+    "ISO 45001"
+  ],
+  "columns": [
+    { "name": "Title", "displayName": "申報編號", "type": "Text", "required": true, "unique": true },
+    { "name": "ApplicantName", "displayName": "員工姓名", "type": "Text", "required": true },
+    { "name": "StaffNo", "displayName": "員工編號", "type": "Text", "required": true },
+    { "name": "ApplicantEmail", "displayName": "申請人電郵", "type": "Text", "required": true },
+    { "name": "Department", "displayName": "組別", "type": "Text", "required": true },
+    { "name": "ManagerEmail", "displayName": "主管公司電郵", "type": "Text", "required": true },
+    { "name": "WorkDate", "displayName": "上班日期", "type": "Text", "required": true },
+    { "name": "StartTime", "displayName": "開始時間", "type": "Text", "required": true },
+    { "name": "EndTime", "displayName": "結束時間", "type": "Text", "required": true },
+    { "name": "TotalDays", "displayName": "申報日數", "type": "Number", "required": true },
+    { "name": "Reason", "displayName": "上班原因", "type": "Note", "required": true },
+    {
+      "name": "Status",
+      "displayName": "審核狀態",
+      "type": "Choice",
+      "choices": ["主管審批中", "HR審核中", "COD審批中", "已批准歸檔", "已駁回"],
+      "default": "主管審批中"
+    },
+    { "name": "ManagerAction", "displayName": "主管審批結果", "type": "Choice", "choices": ["Approved", "Rejected"] },
+    { "name": "ManagerComments", "displayName": "主管意見", "type": "Note" },
+    { "name": "ManagerActionDate", "displayName": "主管簽核時間", "type": "DateTime" },
+    { "name": "HRAction", "displayName": "HR審核結果", "type": "Choice", "choices": ["Approved", "Rejected"] },
+    { "name": "HRComments", "displayName": "HR意見", "type": "Note" },
+    { "name": "HRActionDate", "displayName": "HR審核時間", "type": "DateTime" },
+    { "name": "CODAction", "displayName": "COD批核結果", "type": "Choice", "choices": ["Approved", "Rejected"] },
+    { "name": "CODComments", "displayName": "COD意見", "type": "Note" },
+    { "name": "CODActionDate", "displayName": "COD批核時間", "type": "DateTime" }
+  ]
+}
