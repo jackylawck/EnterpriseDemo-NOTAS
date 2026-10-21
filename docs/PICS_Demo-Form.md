@@ -1,5 +1,8 @@
 # 隱私收集聲明範本 (PICS Demo) / Generic Personal Information Collection Statement
 ### 表格編號：Demo-Form（非營運時段上班記錄表展示）
+### Form Ref: Demo-Form (Non-Operating Time Attendance Record Demo)
+
+---
 
 #### 1. 收集目的 (Purpose of Collection)
 申報人在本系統提交之個人資料（包括但不限於姓名、員工編號、組別、出勤時間及工作原因），將由本展示系統（以下簡稱「本企業」）用於以下目的：
@@ -7,18 +10,45 @@
 - 履行通用勞工法規（如香港法例第 57 章《僱傭條例》）規定之法定出勤與薪酬記錄備查義務；
 - 履行職業安全與健康管理（ISO 45001），監控非正常營運時段之人員安全與緊急應變安排。
 
+The personal data (including but not limited to name, staff ID, department, attendance time, and duty reasons) submitted by the applicant in this system will be used by this demonstration system (hereinafter referred to as "the Enterprise") for the following purposes:
+- To verify the attendance records and work arrangements during non-operating hours, and to process relevant compensation (e.g., compensation leave or overtime allowance);
+- To fulfill statutory obligations for keeping attendance and payroll records as required by general labor regulations (e.g., Employment Ordinance, Cap. 57 of Hong Kong Laws);
+- To implement Occupational Health and Safety Management (ISO 45001) by monitoring personnel safety and emergency response arrangements during non-standard operating hours.
+
+---
+
 #### 2. 資料轉移對象 (Classes of Transferees)
 本企業對上述個人資料予以嚴格保密。除以下對象外，不會向任何未經授權之第三方揭露：
 - 內部具有直接管理權限之部門主管、人力資源部及高階營運主管；
 - 依據相關法例或法庭指令有權查閱之政府監管機構。
 
+The Enterprise keeps the aforementioned personal data strictly confidential. Data will not be disclosed to any unauthorized third parties, except for the following:
+- Internal department managers, Human Resources Department, and executive management with direct supervisory authority;
+- Government regulatory bodies authorized to request access in accordance with relevant laws or court orders.
+
+---
+
 #### 3. 資料準確性與防呆機制 (Data Integrity & Directory Validation)
 為防止流程掛起及確保審批人身分之真實性，本系統將透過內部目錄服務（如 Microsoft Entra ID）驗證所填寫之主管電郵。若填寫無效或非組織成員電郵，系統將自動退回申報。
+
+To prevent workflow suspension and ensure the authenticity of the approver's identity, this system will validate the submitted manager's email address through the internal directory service (e.g., Microsoft Entra ID). If an invalid or non-organizational email is entered, the system will automatically reject and return the submission.
+
+---
 
 #### 4. 資料保留期限 (Data Retention)
 經批准歸檔之出勤及審批記錄將存放於本企業 SharePoint 核心伺服器，自歸檔日起保留至少 7 年，期滿後依資訊安全程序予以銷毀。
 
+Approved attendance and approval records will be securely stored in the Enterprise's core SharePoint servers. These records will be retained for at least 7 years from the date of archiving and will be securely destroyed thereafter in accordance with information security procedures.
+
+---
+
 #### 5. 查閱及更正資料權利 (Access and Correction Rights)
 依據一般個人隱私保護法規（如 GDPR 或香港法例第 486 章《個人資料（私隱）條例》），申報人有權要求查閱及更正其個人資料。如需行使上述權利，請向人力資源部提出書面申請。
 
-*(註：本聲明僅為架構展示用途，不代表真實企業之法律約束文件。)*
+In accordance with general personal data privacy protection regulations (such as GDPR or the Personal Data (Privacy) Ordinance, Cap. 486 of Hong Kong Laws), applicants have the right to request access to and correction of their personal data. To exercise these rights, please submit a written request to the Human Resources Department.
+
+---
+
+> **⚠️ 免責聲明 (Disclaimer):**  
+> 本聲明僅為架構展示用途，不代表真實企業之法律約束文件。不涉及任何真實數據收集。  
+> *This statement is for architectural demonstration purposes only and does not represent a legally binding document of any real-world enterprise. No actual data collection is involved.*
