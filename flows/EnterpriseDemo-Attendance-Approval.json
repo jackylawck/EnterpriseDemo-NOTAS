@@ -1,0 +1,152 @@
+{
+  "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "workflowName": "EnterpriseDemo-Attendance-Approval",
+    "description": "Sanitized Power Automate definition for Multi-Tier Non-Operating Time Attendance Governance",
+    "licenseRequirement": "Microsoft 365 Standard Connectors Only (Zero-License)"
+  },
+  "triggers": {
+    "When_a_new_response_is_submitted": {
+      "type": "OpenApiConnectionWebhook",
+      "inputs": {
+        "host": {
+          "connectionName": "shared_microsoftforms",
+          "operationId": "CreateFormWebhook"
+        },
+        "parameters": {
+          "form_id": "<DEMO_FORM_ID>"
+        }
+      }
+    }
+  },
+  "actions": {
+    "Get_response_details": {
+      "runAfter": {},
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "connectionName": "shared_microsoftforms",
+          "operationId": "GetFormResponseById"
+        },
+        "parameters": {
+          "form_id": "<DEMO_FORM_ID>",
+          "response_id": "@triggerOutputs()?['body/resourceData/responseId']"
+        }
+      }
+    },
+    "Convert_time_zone_to_HKT": {
+      "runAfter": {
+        "Get_response_details": [
+          "Succeeded"
+        ]
+      },
+      "type": "Expression",
+      "inputs": "@convertTimeZone(utcNow(), 'UTC', 'China Standard Time', 'yyyy-MM-dd HH:mm:ss')"
+    },
+    "Create_SharePoint_Audit_Item": {
+      "runAfter": {
+        "Convert_time_zone_to_HKT": [
+          "Succeeded"
+        ]
+      },
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "connectionName": "shared_sharepointonline",
+          "operationId": "PostItem"
+        },
+        "parameters": {
+          "dataset": "https://<TENANT>.sharepoint.com/sites/EnterpriseDemo",
+          "table": "Demo_Non_Operating_OT",
+          "item": {
+            "Title": "@concat('OT-', formatDateTime(utcNow(), 'yyyyMMdd'), '-', triggerOutputs()?['body/resourceData/responseId'])",
+            "Status": "主管審批中"
+          }
+        }
+      }
+    },
+    "Get_Manager_User_Profile_V2": {
+      "runAfter": {
+        "Create_SharePoint_Audit_Item": [
+          "Succeeded"
+        ]
+      },
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "connectionName": "shared_office365users",
+          "operationId": "UserProfile_V2"
+        },
+        "parameters": {
+          "id": "@outputs('Get_response_details')?['body/managerEmail']"
+        }
+      }
+    },
+    "Scope_Invalid_Manager_Email_Exception_Handler": {
+      "runAfter": {
+        "Get_Manager_User_Profile_V2": [
+          "Failed",
+          "TimedOut"
+        ]
+      },
+      "type": "Scope",
+      "actions": {
+        "Update_Status_Auto_Rejected": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "item": {
+                "Status": "已駁回",
+                "ManagerComments": "System Auto-Reject: Invalid Manager Email in Entra ID Directory"
+              }
+            }
+          }
+        },
+        "Send_Rejection_Notification": {
+          "runAfter": {
+            "Update_Status_Auto_Rejected": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "To": "@outputs('Get_response_details')?['body/responder']",
+              "Subject": "[系統自動退回] 非營運時段上班申報 - 主管電郵無效"
+            }
+          }
+        },
+        "Terminate_Flow_Safely": {
+          "runAfter": {
+            "Send_Rejection_Notification": [
+              "Succeeded"
+            ]
+          },
+          "type": "Terminate",
+          "inputs": {
+            "runStatus": "Cancelled"
+          }
+        }
+      }
+    },
+    "Tier1_Manager_Approval": {
+      "runAfter": {
+        "Scope_Invalid_Manager_Email_Exception_Handler": [
+          "Skipped"
+        ]
+      },
+      "type": "OpenApiConnectionWebhook",
+      "inputs": {
+        "host": {
+          "connectionName": "shared_approvals",
+          "operationId": "StartAndWaitForAnApproval"
+        },
+        "parameters": {
+          "approvalType": "Basic",
+          "assignedTo": "@outputs('Get_Manager_User_Profile_V2')?['body/mail']"
+        }
+      }
+    }
+  }
+}
