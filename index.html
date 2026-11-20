@@ -3,86 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no, viewport-fit=cover">
-  
-  <meta name="google-site-verification" content="JZ5UohX-CcP_fQV0_DI9VadkKY4ZoTTkUifL88-fIcY">
 
-  <!-- 🏢 基礎 SEO 標籤 -->
-  <title>EnterpriseDemo-Attendance | 企業非營運時段考勤治理架構展示</title>
-  <meta name="description" content="Enterprise Demo 專案展示如何以 Microsoft 365 原生生態，構建零額外授權的考勤與防虛報內控引擎，落實企業管治與數位審計。">
-  <meta name="keywords" content="Enterprise Demo, Governance as Code, 考勤治理, 內部審計, ISO 27001, ISO 45001, Power Automate, SharePoint Online, 數位轉型, 零額外授權">
+  <!-- 🏢 基礎 SEO 核心標籤：企業管治開源示範項目 -->
+  <title>EnterpriseDemo-NOTAS | 企業非營運時段考勤治理與審計系統 | Governance-as-Code Demo</title>
+  <meta name="description" content="EnterpriseDemo-NOTAS 展示如何以 Microsoft 365 原生生態，在零額外授權成本下構建非營運時段考勤審批、Entra ID 目錄級防呆與全鏈路數位審計引擎，全面對齊香港 PDPO 第486章、僱傭條例第57章及 ISO 27001 / 27701 / 9001 / 45001 治理規範。">
+  <meta name="keywords" content="EnterpriseDemo-NOTAS, Governance as Code, 考勤治理, 非營運時段上班, 內部審計, ISO 27001, ISO 27701, ISO 9001, ISO 45001, PDPO Cap 486, Power Automate, SharePoint Online, Zero-License, Privacy-by-Design">
   <meta name="robots" content="index, follow">
+  <meta name="google-site-verification" content="JZ5UohX-CcP_fQV0_DI9VadkKY4ZoTTkUifL88-fIcY">
   <link rel="canonical" href="https://jackylawck.github.io/EnterpriseDemo-NOTAS/">
 
-  <!-- 👤 作者資訊 -->
-  <meta name="author" content="Jacky Law">
-  <meta property="article:author" content="Jacky Law">
+  <!-- 👤 作者資訊 (隱藏於底層代碼作為 Portfolio 認證) -->
+  <meta name="author" content="羅子淇 (Jacky Law)">
+  <meta property="article:author" content="羅子淇 (Jacky Law)">
 
-  <!-- 🌐 Open Graph 社交卡片 -->
+  <!-- 🌐 Open Graph / LinkedIn / Facebook 社交卡片 -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jackylawck.github.io/EnterpriseDemo-NOTAS/">
-  <meta property="og:title" content="EnterpriseDemo: 企業考勤治理架構展示">
-  <meta property="og:description" content="零額外授權成本、多級審批與目錄級防呆。展示如何利用 M365 原生生態落實工時合規與全鏈路審計追蹤。">
+  <meta property="og:title" content="EnterpriseDemo-NOTAS：企業非營運時段考勤治理架構展示">
+  <meta property="og:description" content="零額外授權成本、Entra ID 目錄級防呆、三級動態電子簽核與不可篡改 HKT 時間戳記。展示如何以 M365 原生生態落實 ISO 27001 / 45001 與私隱合規閉環。">
   <meta property="og:image" content="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="EnterpriseDemo 考勤系統架構圖">
+  <meta property="og:image:alt" content="EnterpriseDemo-NOTAS 考勤治理系統架構圖">
   <meta property="og:locale" content="zh_HK">
   <meta property="og:site_name" content="Enterprise Governance Demo">
 
   <!-- 🐦 Twitter / X Cards -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="EnterpriseDemo-Attendance | 企業架構展示">
-  <meta name="twitter:description" content="零額外授權多級考勤審批鏈，整合目錄防呆與不可篡改時間戳記，展示合規與 ISO 治理標準。">
+  <meta name="twitter:title" content="EnterpriseDemo-NOTAS | 企業非營運時段考勤治理系統">
+  <meta name="twitter:description" content="零額外授權多級考勤審批鏈，整合目錄異常攔截與 SharePoint JSON 視覺化審計看板，落實 ISO 27001 / 45001 高標準管治。">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop">
 
-  <!-- 📱 PWA 適配 -->
+  <!-- 📱 PWA 與行動端原生適配 -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="EnterpriseDemo">
+  <meta name="apple-mobile-web-app-title" content="Demo-NOTAS">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#070f1e">
-  <meta name="application-name" content="EnterpriseDemo 考勤治理系統">
+  <meta name="application-name" content="EnterpriseDemo-NOTAS">
 
-  <!-- 🛡️ 安全標頭 CSP 防禦 -->
-  <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    script-src 'self' 'unsafe-inline';
-    style-src 'self' 'unsafe-inline';
-    img-src 'self' data: https://img.shields.io https://images.unsplash.com;
-    font-src 'self' data:;
-    connect-src 'self';
-    media-src 'none';
-    object-src 'none';
-    base-uri 'self';
-    form-action 'none';
-    frame-ancestors 'none';
-  ">
+  <!-- 🛡️ 企業級資安防禦策略：單行化 Content Security Policy (CSP) 與權限控制 -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://img.shields.io https://images.unsplash.com; font-src 'self' data:; connect-src 'self'; media-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none';">
   <meta http-equiv="Permissions-Policy" content="accelerometer=(), gyroscope=(), microphone=(), camera=(), geolocation=(), payment=()">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
-  <!-- 🏷️ Schema.org 結構化資料 -->
+  <!-- 🏷️ Schema.org 結構化資料 (虛擬法人 + 真實作者 Person) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "https://demo-enterprise.local/#organization",
+        "name": "Enterprise Demo Framework",
+        "alternateName": "Enterprise Demo",
+        "url": "https://demo-enterprise.local/",
+        "description": "A generic enterprise demo showcasing M365 zero-license attendance governance, directory validation, and ISO compliance architecture."
+      },
+      {
         "@type": "Person",
-        "@id": "https://github.com/jackylawck/#author",
-        "name": "Jacky Law",
-        "jobTitle": "Corporate Governance & Architecture Advisor",
-        "url": "https://github.com/jackylawck"
+        "@id": "https://jackylawck.github.io/jackylawck/#author",
+        "name": "羅子淇 (Jacky Law)",
+        "jobTitle": "System Architect & Corporate Governance Advisor",
+        "url": "https://jackylawck.github.io/jackylawck",
+        "sameAs": [
+          "https://github.com/jackylawck"
+        ]
       },
       {
         "@type": "SoftwareApplication",
         "@id": "https://jackylawck.github.io/EnterpriseDemo-NOTAS/#software",
-        "name": "EnterpriseDemo: 非營運時段考勤治理架構",
-        "alternateName": "Non-Operating Time Attendance System (Demo-Form)",
+        "name": "EnterpriseDemo-NOTAS: 企業非營運時段考勤治理與審計系統",
+        "alternateName": "Non-Operating Time Attendance System (DEMO-ATT-GOV-2026-V1)",
         "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Microsoft 365, Web Browser",
+        "operatingSystem": "Microsoft 365, Power Automate, SharePoint Online, Web Browser",
         "author": {
-          "@id": "https://github.com/jackylawck/#author"
+          "@id": "https://jackylawck.github.io/jackylawck/#author"
         },
-        "description": "企業級零額外授權非營運時段出勤審批與反虛報治理引擎展示，符合 ISO 27001 / 45001 架構規範。"
+        "publisher": {
+          "@id": "https://demo-enterprise.local/#organization"
+        },
+        "description": "企業級零額外授權非營運時段出勤審批與反虛報治理引擎展示，結合 Entra ID 目錄防呆、三級電子簽核與 SharePoint 審計帳本，符合 ISO 27001 / 27701 / 9001 / 45001 規範。"
       }
     ]
   }
@@ -93,21 +94,25 @@
       --primary: #0078d4;
       --primary-dark: #004578;
       --bg-dark: #070f1e;
-      --card-bg: rgba(16, 29, 51, 0.75);
+      --card-bg: rgba(16, 29, 51, 0.78);
       --card-border: rgba(0, 120, 212, 0.28);
-      --accent-green: #107c41;
-      --accent-purple: #8764b8;
+      --accent: #107c41;
       --accent-amber: #d83b01;
       --text-main: #f3f4f6;
       --text-muted: #9ca3af;
       --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang HK", "Microsoft JhengHei", sans-serif;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: var(--font-family);
       background-color: var(--bg-dark);
-      background-image: 
+      background-image:
         radial-gradient(at 0% 0%, rgba(0, 120, 212, 0.15) 0px, transparent 50%),
         radial-gradient(at 100% 100%, rgba(16, 124, 65, 0.12) 0px, transparent 50%);
       color: var(--text-main);
@@ -115,8 +120,44 @@
       padding: 24px 16px;
       min-height: 100vh;
     }
-    .container { max-width: 1080px; margin: 0 auto; }
-    header { text-align: center; padding: 40px 16px 28px; }
+
+    /* Strict Single-Language Visibility Rules */
+    body:not(.lang-en) .en { display: none !important; }
+    body.lang-en .tc { display: none !important; }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 8px;
+    }
+
+    .lang-toggle {
+      background: rgba(0, 120, 212, 0.18);
+      color: #93c5fd;
+      border: 1px solid rgba(96, 165, 250, 0.4);
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-toggle:hover {
+      background: rgba(0, 120, 212, 0.35);
+      color: #ffffff;
+    }
+
+    header {
+      text-align: center;
+      padding: 24px 16px 28px;
+    }
+
     .corp-badge {
       display: inline-block;
       background: rgba(0, 120, 212, 0.15);
@@ -130,21 +171,48 @@
       margin-bottom: 14px;
       text-transform: uppercase;
     }
-    h1 { font-size: 2.1rem; font-weight: 800; color: #ffffff; margin-bottom: 8px; letter-spacing: -0.02em; }
-    .subtitle { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 20px; }
-    .badge-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 24px; }
-    .badge-bar img { height: 22px; }
+
+    h1 {
+      font-size: 2.05rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .badge-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .badge-bar img {
+      height: 22px;
+    }
+
     .tagline-box {
       background: var(--card-bg);
       border-left: 4px solid var(--primary);
       border-radius: 4px;
       padding: 16px 20px;
-      max-width: 840px;
+      max-width: 860px;
       margin: 0 auto 36px;
       text-align: left;
-      font-size: 0.98rem;
+      font-size: 0.96rem;
     }
-    .tagline-box strong { color: #93c5fd; }
+
+    .tagline-box strong {
+      color: #93c5fd;
+    }
+
     .card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -154,8 +222,9 @@
       backdrop-filter: blur(12px);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
     }
+
     .card h2 {
-      font-size: 1.35rem;
+      font-size: 1.32rem;
       color: #ffffff;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       padding-bottom: 12px;
@@ -164,29 +233,447 @@
       align-items: center;
       gap: 10px;
     }
-    p { color: #d1d5db; font-size: 0.96rem; margin-bottom: 14px; }
-    .disclaimer { border-left: 4px solid var(--accent-amber); background: rgba(216, 59, 1, 0.08); padding: 14px; border-radius: 4px; color: #ffbba6; font-size: 0.85rem; margin-top: 20px; }
+
+    p {
+      color: #d1d5db;
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+    }
+
+    code {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.85em;
+      color: #93c5fd;
+    }
+
     .flow-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+      gap: 16px;
       margin: 20px 0;
     }
+
     .flow-node {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 8px;
-      padding: 14px;
+      padding: 16px;
     }
-    .flow-node.highlight {
-      border-color: rgba(16, 124, 65, 0.6);
-      background: rgba(16, 124, 65, 0.08);
+
+    .flow-node.active {
+      border-color: rgba(16, 124, 65, 0.7);
+      background: rgba(16, 124, 65, 0.12);
     }
-    .flow-step { font-size: 0.72rem; font-weight: 700; color: #60a5fa; text-transform: uppercase; margin-bottom: 4px; }
-    .flow-title { font-size: 0.92rem; font-weight: 600; color: #ffffff; margin-bottom: 6px; }
-    .flow-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
-    .table-container { width: 100%; overflow-x: auto; margin-top: 14px; }
-    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.88rem; }
+
+    .flow-step {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #60a5fa;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .flow-node.active .flow-step {
+      color: #34d399;
+    }
+
+    .flow-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .flow-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-bottom: 0;
+    }
+
+    /* Interactive 3-Step Simulator */
+    .stepper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .step-pill {
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.03);
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .step-pill.current {
+      border-color: rgba(96, 165, 250, 0.75);
+      background: rgba(0, 120, 212, 0.22);
+      color: #ffffff;
+    }
+
+    .step-pill.done {
+      border-color: rgba(52, 211, 153, 0.5);
+      background: rgba(16, 124, 65, 0.16);
+      color: #6ee7b7;
+    }
+
+    .sim-shell {
+      background: rgba(7, 15, 30, 0.62);
+      border: 1px solid rgba(96, 165, 250, 0.26);
+      border-radius: 10px;
+      padding: 22px;
+    }
+
+    .sim-header-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .sim-header-row h3 {
+      font-size: 1.08rem;
+      color: #ffffff;
+    }
+
+    .preset-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn-mini {
+      background: rgba(0, 120, 212, 0.18);
+      color: #93c5fd;
+      border: 1px solid rgba(96, 165, 250, 0.35);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-mini:hover {
+      background: rgba(0, 120, 212, 0.35);
+      color: #ffffff;
+    }
+
+    .btn-mini.warn-preset {
+      background: rgba(216, 59, 1, 0.16);
+      color: #fdba74;
+      border-color: rgba(251, 146, 60, 0.4);
+    }
+
+    .btn-mini.warn-preset:hover {
+      background: rgba(216, 59, 1, 0.32);
+      color: #ffffff;
+    }
+
+    .sim-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .sim-field {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .sim-field label {
+      font-size: 0.82rem;
+      color: #93c5fd;
+      font-weight: 600;
+    }
+
+    .sim-input,
+    .sim-select,
+    .sim-textarea {
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(96, 165, 250, 0.35);
+      color: #ffffff;
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-size: 0.86rem;
+      font-family: inherit;
+      width: 100%;
+    }
+
+    .sim-textarea {
+      resize: vertical;
+      min-height: 64px;
+    }
+
+    .decl-box {
+      margin-top: 14px;
+      padding: 12px 14px;
+      background: rgba(0, 120, 212, 0.08);
+      border: 1px solid rgba(96, 165, 250, 0.3);
+      border-radius: 8px;
+    }
+
+    .decl-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.86rem;
+      color: #f3f4f6;
+      cursor: pointer;
+    }
+
+    .decl-label input {
+      width: 16px;
+      height: 16px;
+      accent-color: #0078d4;
+      cursor: pointer;
+    }
+
+    .action-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 18px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 7px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-approve {
+      background: #107c41;
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-approve:hover {
+      background: #0b5a2f;
+    }
+
+    .btn-reject {
+      background: #b91c1c;
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-reject:hover {
+      background: #991b1b;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.07);
+      color: #e5e7eb;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 9px 16px;
+      border-radius: 7px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-secondary.full {
+      width: 100%;
+    }
+
+    .alert-box {
+      padding: 11px 14px;
+      border-radius: 7px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .alert-info {
+      background: rgba(0, 120, 212, 0.14);
+      border: 1px solid rgba(96, 165, 250, 0.4);
+      color: #bfdbfe;
+    }
+
+    .alert-warn {
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(251, 191, 36, 0.45);
+      color: #fcd34d;
+    }
+
+    .alert-pass {
+      background: rgba(16, 124, 65, 0.18);
+      border: 1px solid rgba(52, 211, 153, 0.45);
+      color: #6ee7b7;
+    }
+
+    .alert-fail {
+      background: rgba(220, 38, 38, 0.16);
+      border: 1px solid rgba(248, 113, 113, 0.45);
+      color: #fca5a5;
+    }
+
+    /* Approval Tier Cards */
+    .tier-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 14px 0;
+    }
+
+    .tier-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .tier-card.active-tier {
+      border-color: #60a5fa;
+      background: rgba(0, 120, 212, 0.12);
+    }
+
+    .tier-card.done-tier {
+      border-color: rgba(52, 211, 153, 0.45);
+      background: rgba(16, 124, 65, 0.1);
+    }
+
+    .tier-card.rej-tier {
+      border-color: rgba(248, 113, 113, 0.5);
+      background: rgba(220, 38, 38, 0.12);
+    }
+
+    .tier-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .tier-title {
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .tier-meta {
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .tier-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+      align-items: center;
+    }
+
+    .tier-controls input {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    /* SharePoint Column Formatting Pill Replica */
+    .sp-pill {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 16px;
+      font-weight: 700;
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    .sp-mgr { color: #1e40af; background-color: #dbeafe; }
+    .sp-hr { color: #5b21b6; background-color: #ede9fe; }
+    .sp-cod { color: #9a3412; background-color: #ffedd5; }
+    .sp-ok { color: #166534; background-color: #dcfce7; }
+    .sp-rej { color: #991b1b; background-color: #fee2e2; }
+
+    .json-preview {
+      margin: 14px 0;
+      background: rgba(10, 19, 36, 0.95);
+      border: 1px dashed rgba(96, 165, 250, 0.45);
+      border-radius: 8px;
+      padding: 16px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.78rem;
+      color: #cbd5e1;
+      line-height: 1.55;
+      overflow-x: auto;
+      white-space: pre;
+    }
+
+    details.expander {
+      margin-top: 12px;
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+
+    details.expander summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #93c5fd;
+    }
+
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+
     th {
       background: rgba(0, 120, 212, 0.2);
       color: #93c5fd;
@@ -194,8 +681,17 @@
       font-weight: 600;
       border-bottom: 1px solid var(--card-border);
     }
-    td { padding: 12px 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: #d1d5db; }
-    tr:hover td { background: rgba(255, 255, 255, 0.02); }
+
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #d1d5db;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
     .role-badge {
       display: inline-block;
       padding: 2px 8px;
@@ -203,23 +699,37 @@
       font-size: 0.75rem;
       font-weight: 600;
       background: rgba(255, 255, 255, 0.08);
+      color: #e5e7eb;
     }
+
     .tech-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 16px;
       margin-top: 14px;
     }
+
     .tech-item {
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: 8px;
       padding: 16px;
     }
-    .tech-item h3 { font-size: 0.95rem; color: #60a5fa; margin-bottom: 8px; }
-    .tech-item p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0; }
+
+    .tech-item h3 {
+      font-size: 0.95rem;
+      color: #60a5fa;
+      margin-bottom: 8px;
+    }
+
+    .tech-item p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
     .callout {
-      border-left: 4px solid var(--accent-green);
+      border-left: 4px solid var(--accent);
       background: rgba(16, 124, 65, 0.08);
       padding: 14px 18px;
       border-radius: 4px;
@@ -227,6 +737,31 @@
       color: #d1fae5;
       margin: 14px 0;
     }
+
+    .artifact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .artifact-links a {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(96, 165, 250, 0.3);
+      color: #93c5fd;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+
+    .artifact-links a:hover {
+      background: rgba(0, 120, 212, 0.25);
+      color: #ffffff;
+    }
+
     footer {
       text-align: center;
       padding: 30px 16px 20px;
@@ -235,11 +770,32 @@
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       margin-top: 40px;
     }
-    footer a { color: #60a5fa; text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-    @media (max-width: 640px) {
-      h1 { font-size: 1.6rem; }
+
+    footer a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer p.disclaimer {
+      color: #fbbf24;
+      font-size: 0.8rem;
+      max-width: 780px;
+      margin: 12px auto 0;
+      background: rgba(251, 191, 36, 0.1);
+      padding: 8px 12px;
+      border-radius: 4px;
+      border: 1px solid rgba(251, 191, 36, 0.2);
+    }
+
+    @media (max-width: 680px) {
+      h1 { font-size: 1.55rem; }
       .card { padding: 18px; }
+      .sim-shell { padding: 14px; }
+      .stepper { grid-template-columns: 1fr; }
       body { padding: 16px 10px; }
     }
   </style>
@@ -247,188 +803,941 @@
 <body>
 
   <div class="container">
+    <div class="top-nav">
+      <button type="button" class="lang-toggle" id="langBtn">
+        <span class="tc">Switch to English</span>
+        <span class="en">切換至繁體中文</span>
+      </button>
+    </div>
+
     <header>
-      <div class="corp-badge">Enterprise Architecture Demo</div>
-      <h1>EnterpriseDemo: 考勤治理與審計系統</h1>
-      <div class="subtitle">Non-Operating Time Attendance System (Governance-as-Code)</div>
-      
+      <div class="corp-badge">
+        <span class="tc">企業數碼轉型與內控管治・開源架構展示</span>
+        <span class="en">Enterprise Digital Transformation & Governance • Open-Source Demo</span>
+      </div>
+      <h1>
+        <span class="tc">EnterpriseDemo-NOTAS：非營運時段考勤治理與審計系統</span>
+        <span class="en">EnterpriseDemo-NOTAS: Non-Operating Time Attendance Governance</span>
+      </h1>
+      <div class="subtitle">
+        <span class="tc">零額外授權成本、Entra ID 目錄防呆、三級動態電子簽核與不可篡改數位審計鏈（Demo-Form）</span>
+        <span class="en">Zero-License M365 Architecture, Entra ID Directory Validation & Multi-Tier Audit Engine (Demo-Form)</span>
+      </div>
+
       <div class="badge-bar">
         <a href="https://github.com/jackylawck/EnterpriseDemo-NOTAS" target="_blank" rel="noopener">
-          <img src="https://img.shields.io/badge/System-EnterpriseDemo-0078D4.svg" alt="System EnterpriseDemo">
+          <img src="https://img.shields.io/badge/System-EnterpriseDemo--NOTAS-0078D4.svg" alt="System EnterpriseDemo-NOTAS">
         </a>
-        <img src="https://img.shields.io/badge/Compliance-Internal%20Audit-green.svg" alt="Internal Audit">
-        <img src="https://img.shields.io/badge/Standard-ISO%2027001%20%7C%2027701-purple.svg" alt="ISO 27001 / 27701">
-        <img src="https://img.shields.io/badge/Management-ISO%209001%20%7C%2045001-orange.svg" alt="ISO 9001 / 45001">
-        <img src="https://img.shields.io/badge/Stack-Power%20Automate%20%7C%20SharePoint-008272.svg" alt="M365 Low Code">
+        <img src="https://img.shields.io/badge/Compliance-Internal%20Audit%20%7C%20PDPO-green.svg" alt="Internal Audit and PDPO">
+        <img src="https://img.shields.io/badge/Standard-ISO%2027001%20%7C%2027701-purple.svg" alt="ISO 27001 and 27701">
+        <img src="https://img.shields.io/badge/Management-ISO%209001%20%7C%2045001-orange.svg" alt="ISO 9001 and 45001">
+        <img src="https://img.shields.io/badge/Stack-Power%20Automate%20%7C%20SharePoint-008272.svg" alt="M365 Standard Connectors">
       </div>
 
       <div class="tagline-box">
-        <strong>"Zero-License, Multi-Tier Attendance & Anti-Fraud Governance Engine"</strong><br>
-        「零額外授權成本、多級審批與數位審計鏈之考勤治理架構展示」
+        <div class="tc">
+          <strong>「零額外授權成本、目錄級防呆與三級動態審批之考勤內控治理引擎」</strong><br>
+          完全基於 Microsoft 365 商業標準版連接器構建，以確定性規則引擎取代傳統紙本申報，實現 7 年可稽核電子留存、職安健風險預警與全流程自動化閉環。
+        </div>
+        <div class="en">
+          <strong>"Zero-License, Directory-Validated & Multi-Tier Attendance Governance Engine"</strong><br>
+          Built exclusively on Microsoft 365 Standard Connectors, replacing paper-based non-operating attendance forms with deterministic exception handling, 7-year audit retention, and OHS lone-working visibility.
+        </div>
       </div>
     </header>
 
     <main>
-      <!-- 專案摘要 -->
+      <!-- 專案摘要與合規定位 -->
       <section class="card">
-        <h2>📌 專案摘要 (Executive Summary)</h2>
-        <p><strong>This repository is an Enterprise Demo showcasing how to implement Governance-as-Code using M365 and Zero-Trust architecture.</strong></p>
-        <p>本專案將傳統紙本「非營運時段上班記錄表 (Demo-Form)」全面數位化，以 <strong>Microsoft 365 原生生態</strong> 為基礎架構，在<strong>零額外 Power Platform 授權費用</strong>下，整合目錄防呆、動態多級審批、HKT 標準時間戳與全鏈路閉環通報，全面對齊 ISO 國際管理體系。</p>
-        
-        <div class="disclaimer">
-          <strong>⚠️ 免責聲明 (Disclaimer)</strong><br>
-          This project is a generic enterprise demo created for academic and architectural research. All data, organizational names, and endpoints used are fictional or generic placeholders. (本專案為學術與架構研究用途之通用企業展示。系統內所有數據及組織名稱均為虛構佔位符。)
-        </div>
+        <h2>
+          <span class="tc">📌 專案摘要與治理定位</span>
+          <span class="en">📌 Executive Summary & Governance Positioning</span>
+        </h2>
+        <p class="tc"><strong>本儲存庫為一項企業管治開源示範專案，展示如何運用 Microsoft 365 原生低代碼生態與「治理即代碼」（Governance-as-Code）理念，構建零額外授權的考勤與防虛報內控系統。</strong></p>
+        <p class="en"><strong>This repository is an Enterprise Demo demonstrating how to implement Governance-as-Code using native Microsoft 365 standard connectors to build a zero-license attendance and anti-fraud internal control engine.</strong></p>
+
+        <p class="tc"><strong>EnterpriseDemo-NOTAS</strong> 將傳統易遺失、難以追溯的紙本「非營運時段上班記錄表 (Demo-Form)」全面數位化。系統整合 <strong>Microsoft Forms 身分鎖定</strong>、<strong>Entra ID (`Get user profile V2`) 目錄防呆攔截</strong>、<strong>三級動態電子簽核（部門主管 ➔ 人力資源部 ➔ 高階營運主管）</strong>、<strong>HKT (UTC+8) 標準時區校正</strong>以及 <strong>SharePoint JSON 視覺化審計帳本</strong>，全面對齊 <strong>ISO/IEC 27001、27701、9001 及 ISO 45001</strong> 國際管理體系。</p>
+        <p class="en"><strong>EnterpriseDemo-NOTAS</strong> digitizes traditional paper-based "Non-Operating Time Attendance Records (Demo-Form)". It orchestrates <strong>Microsoft Forms identity binding</strong>, <strong>Entra ID (<code>Get user profile V2</code>) directory validation</strong>, <strong>3-tier dynamic Approvals (Line Manager ➔ HR ➔ Executive/COD)</strong>, <strong>HKT (UTC+8) timezone normalization</strong>, and a <strong>SharePoint JSON-formatted audit ledger</strong> aligned with <strong>ISO/IEC 27001, 27701, 9001, and ISO 45001</strong>.</p>
+
+        <p class="tc">本系統架構 100% 採用<strong>確定性條件式規則引擎（Deterministic Conditional Logic）</strong>，不含任何機器學習或自動化人事評分演算法，明確排除於《歐盟人工智能法案》（EU AI Act）及 ISO/IEC 42001 強制範圍之外；同時所有資料留存於企業本地租戶環境，不涉及跨境數據傳輸。</p>
+        <p class="en">Operating entirely on <strong>deterministic conditional logic</strong> without machine learning or algorithmic profiling, this architecture is explicitly scoped out of the EU AI Act and ISO/IEC 42001, while keeping all audit records within the corporate local tenant with zero cross-border data export.</p>
       </section>
 
-      <!-- 治理架構 -->
+      <!-- 流程生命週期與治理閉環 -->
       <section class="card">
-        <h2>🏛️ 流程生命週期與治理閉環 (Workflow Lifecycle)</h2>
+        <h2>
+          <span class="tc">🏛️ 流程生命週期與治理閉環</span>
+          <span class="en">🏛️ End-to-End Workflow Lifecycle & Governance Closure</span>
+        </h2>
         <div class="flow-grid">
           <div class="flow-node">
-            <div class="flow-step">1. 填報立案</div>
-            <div class="flow-title">Forms 身分鎖定</div>
-            <div class="flow-desc">登入驗證、建立流水單號並回寫 SharePoint 核心清單。</div>
+            <div class="flow-step"><span class="tc">步驟 01 • 填報立案</span><span class="en">Step 01 • Submission</span></div>
+            <div class="flow-title"><span class="tc">Forms 身分鎖定建單</span><span class="en">Forms Identity Binding</span></div>
+            <p class="flow-desc"><span class="tc">強制組織登入驗證，轉換 HKT 時間戳，生成唯一單號 <code>OT-YYYYMMDD-ID</code> 寫入 SharePoint。</span><span class="en">Enforces org login, normalizes HKT timestamp, and creates SharePoint item <code>OT-YYYYMMDD-ID</code>.</span></p>
           </div>
           <div class="flow-node">
-            <div class="flow-step">2. 目錄防呆</div>
-            <div class="flow-title">主管電郵驗證</div>
-            <div class="flow-desc">向 Entra ID 核實主管身分；異常則自動攔截退回，防止流程死結。</div>
+            <div class="flow-step"><span class="tc">步驟 02 • 目錄防呆</span><span class="en">Step 02 • Directory Gate</span></div>
+            <div class="flow-title"><span class="tc">主管電郵核實與攔截</span><span class="en">Entra ID Scope Guard</span></div>
+            <p class="flow-desc"><span class="tc">向 Entra ID 驗證主管電郵；無效則觸發 <code>Scope</code> 異常攔截，自動駁回並發信終止流程。</span><span class="en">Validates manager email via Entra ID; invalid entries trigger <code>Scope</code> auto-rejection and termination.</span></p>
           </div>
           <div class="flow-node">
-            <div class="flow-step">3. 部門審批</div>
-            <div class="flow-title">第 1 棒主管審核</div>
-            <div class="flow-desc">核實申報必要性；駁回即時通知，通過則推進至 HR 審查。</div>
+            <div class="flow-step"><span class="tc">步驟 03 • 第 1 棒簽核</span><span class="en">Step 03 • Tier 1 Manager</span></div>
+            <div class="flow-title"><span class="tc">部門主管業務核實</span><span class="en">Department Supervision</span></div>
+            <p class="flow-desc"><span class="tc">派發 Approvals 卡片核實加班必要性；駁回即時結案，批准則推進至 <code>HR審核中</code>。</span><span class="en">Dispatches Approvals card to verify duty necessity; approval advances status to <code>HR Review</code>.</span></p>
           </div>
           <div class="flow-node">
-            <div class="flow-step">4. 人資合規</div>
-            <div class="flow-title">第 2 棒 HR 審核</div>
-            <div class="flow-desc">核對勞工條例工時規範與事由合理性，呈交高階營運主管批核。</div>
+            <div class="flow-step"><span class="tc">步驟 04 • 第 2 棒簽核</span><span class="en">Step 04 • Tier 2 HR</span></div>
+            <div class="flow-title"><span class="tc">人力資源合規覆核</span><span class="en">HR Statutory Review</span></div>
+            <p class="flow-desc"><span class="tc">核對勞工條例工時上限與職安健單獨作業風險；批准則推進至 <code>COD審批中</code>。</span><span class="en">Reviews labor ordinance compliance and lone-working safety; approval advances to <code>COD Review</code>.</span></p>
           </div>
-          <div class="flow-node highlight">
-            <div class="flow-step">5. 決策閉環</div>
-            <div class="flow-title">第 3 棒 COD 批核</div>
-            <div class="flow-desc">高層核准歸檔，自動派發結案公函並抄送 HR 留存，完成審計鏈。</div>
+          <div class="flow-node active">
+            <div class="flow-step"><span class="tc">步驟 05 • 第 3 棒閉環</span><span class="en">Step 05 • Tier 3 Closure</span></div>
+            <div class="flow-title"><span class="tc">高層批核與歸檔通報</span><span class="en">Executive Sign-Off & Archive</span></div>
+            <p class="flow-desc"><span class="tc">最終核准回寫 <code>已批准歸檔</code>，發送正式結案公函予員工並 Cc 人資備查留存 7 年。</span><span class="en">Final sign-off updates status to <code>Approved & Archived</code>, dispatches official notice, and retains 7 years.</span></p>
           </div>
         </div>
       </section>
 
-      <!-- 業務矩陣表格 -->
+      <!-- 互動式三階段工作流模擬器 -->
+      <section class="card" id="simulatorSection">
+        <h2>
+          <span class="tc">🧪 互動式三階段工作流模擬器（1:1 還原 Power Automate 狀態機）</span>
+          <span class="en">🧪 Interactive 3-Stage Workflow Simulator (Power Automate State Machine Replica)</span>
+        </h2>
+        <p class="tc">在此體驗完整系統運作邏輯：包含 <strong>Entra ID 目錄防呆異常攔截（<code>Scope runAfter: Failed</code>）</strong>、<strong>三級串聯電子簽核狀態推進</strong>，以及 <strong>SharePoint Column Formatting JSON 動態視覺看板</strong>。</p>
+        <p class="en">Experience the end-to-end orchestration: test <strong>Entra ID directory validation & <code>Scope</code> exception catching</strong>, interactively execute <strong>3-tier sequential Approvals</strong>, and inspect the <strong>SharePoint Column Formatting JSON ledger</strong>.</p>
+
+        <div class="stepper" id="stepperBar">
+          <div class="step-pill current" data-step="1">
+            <span class="tc">① 第一階段：員工 Forms 申報</span>
+            <span class="en">① Stage 1: Employee Forms Input</span>
+          </div>
+          <div class="step-pill" data-step="2">
+            <span class="tc">② 第二階段：目錄驗證與三級審批</span>
+            <span class="en">② Stage 2: Directory & 3-Tier Approvals</span>
+          </div>
+          <div class="step-pill" data-step="3">
+            <span class="tc">③ 第三階段：SharePoint 看板與存證</span>
+            <span class="en">③ Stage 3: SharePoint Ledger & Receipt</span>
+          </div>
+        </div>
+
+        <div class="sim-shell" id="simAppRoot"></div>
+      </section>
+
+      <!-- 業務治理矩陣表格 -->
       <section class="card">
-        <h2>📋 業務治理矩陣 (Governance Matrix)</h2>
+        <h2>
+          <span class="tc">📋 業務治理與權限隔離矩陣</span>
+          <span class="en">📋 Governance & Control Isolation Matrix</span>
+        </h2>
         <div class="table-container">
           <table>
             <thead>
               <tr>
-                <th>階段</th>
-                <th>責任角色</th>
-                <th>承載技術</th>
-                <th>處置動作與審計紀錄</th>
+                <th><span class="tc">階段</span><span class="en">Stage</span></th>
+                <th><span class="tc">責任角色</span><span class="en">Role</span></th>
+                <th><span class="tc">承載技術</span><span class="en">Technology Stack</span></th>
+                <th><span class="tc">處置動作與審計控制紀錄</span><span class="en">Action & Audit Control</span></th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>填報立案</strong></td>
-                <td><span class="role-badge">申報員工</span></td>
+                <td><strong><span class="tc">一、填報立案</span><span class="en">1. Submission</span></strong></td>
+                <td><span class="role-badge"><span class="tc">申報員工</span><span class="en">Applicant</span></span></td>
                 <td>Microsoft Forms + SharePoint</td>
-                <td>限定內部帳號登入，生成唯一單號（<code>OT-YYYYMMDD-ID</code>），初始狀態為 <code>主管審批中</code>。</td>
+                <td><span class="tc">強制組織帳號登入，展示 PICS 聲明，生成唯一單號（<code>OT-YYYYMMDD-ID</code>），初始狀態寫入 <code>主管審批中</code>。</span><span class="en">Enforces org login with PICS notice, generates unique ID (<code>OT-YYYYMMDD-ID</code>), sets status to <code>Manager Review</code>.</span></td>
               </tr>
               <tr>
-                <td><strong>目錄防呆</strong></td>
-                <td><span class="role-badge">自動引擎</span></td>
-                <td>Office 365 Users (`Get user profile`)</td>
-                <td>自動驗證主管電郵是否合法存在；無效則經由 Scope 攔截自動標記 <code>已駁回</code> 並發信。</td>
+                <td><strong><span class="tc">二、目錄防呆</span><span class="en">2. Directory Check</span></strong></td>
+                <td><span class="role-badge"><span class="tc">自動引擎</span><span class="en">Auto Engine</span></span></td>
+                <td>Office 365 Users (<code>Get user profile V2</code>)</td>
+                <td><span class="tc">向 Entra ID 核實主管電郵；若查詢失敗或逾時，經由 <code>Scope</code> 攔截自動標記 <code>已駁回</code> 並發信退回，防止工作流掛起。</span><span class="en">Verifies manager email in Entra ID; if failed/timed out, <code>Scope</code> catches exception, marks <code>Rejected</code>, and notifies applicant.</span></td>
               </tr>
               <tr>
-                <td><strong>收件確認</strong></td>
-                <td><span class="role-badge">自動引擎</span></td>
-                <td>Outlook (Office 365)</td>
-                <td>目錄驗證通過後發信告知申報單號與審批主管姓名，落實勞資溝通透明度。</td>
+                <td><strong><span class="tc">三、收件確認</span><span class="en">3. Acknowledgment</span></strong></td>
+                <td><span class="role-badge"><span class="tc">自動引擎</span><span class="en">Auto Engine</span></span></td>
+                <td>Office 365 Outlook</td>
+                <td><span class="tc">目錄驗證通過後即時發送收件回條，列明申報單號、HKT 提交時間與當前審批主管姓名，確保資訊透明。</span><span class="en">Dispatches confirmation receipt listing Case ID, HKT submission timestamp, and verified manager name.</span></td>
               </tr>
               <tr>
-                <td><strong>第 1 棒主管審批</strong></td>
-                <td><span class="role-badge">部門主管</span></td>
-                <td>Outlook / Teams Approvals</td>
-                <td>動態派發至部門主管；駁回即通知結案，通過則將狀態推進至 <code>HR審核中</code>。</td>
+                <td><strong><span class="tc">四、第 1 棒主管審批</span><span class="en">4. Tier 1 Manager</span></strong></td>
+                <td><span class="role-badge"><span class="tc">部門主管</span><span class="en">Line Manager</span></span></td>
+                <td>M365 Approvals (Teams / Outlook)</td>
+                <td><span class="tc">派發互動式簽核卡片；駁回即寫入 <code>已駁回</code> 結案，批准則記錄主管意見與 HKT 時間戳，推進至 <code>HR審核中</code>。</span><span class="en">Sends actionable approval card; rejection closes case, approval logs comment & HKT timestamp and advances to <code>HR Review</code>.</span></td>
               </tr>
               <tr>
-                <td><strong>第 2 棒 HR 審核</strong></td>
-                <td><span class="role-badge">人力資源部</span></td>
-                <td>Outlook / Teams Approvals</td>
-                <td>人資部門進行法定合規覆核；通過則將狀態推進至 <code>COD審批中</code>。</td>
+                <td><strong><span class="tc">五、第 2 棒 HR 審核</span><span class="en">5. Tier 2 HR</span></strong></td>
+                <td><span class="role-badge"><span class="tc">人力資源部</span><span class="en">HR Compliance</span></span></td>
+                <td>M365 Approvals (Teams / Outlook)</td>
+                <td><span class="tc">進行勞工法規工時與補償合理性覆核；批准則獨立回寫 <code>HRAction</code> 與簽核時間，推進至 <code>COD審批中</code>。</span><span class="en">Performs labor ordinance & compensation review; approval logs independent <code>HRAction</code> & timestamp, advancing to <code>COD Review</code>.</span></td>
               </tr>
               <tr>
-                <td><strong>第 3 棒 COD 批核</strong></td>
-                <td><span class="role-badge">高階主管</span></td>
-                <td>Outlook / Teams Approvals</td>
-                <td>營運最高層最終核准，系統回寫狀態為 <code>已批准歸檔</code> 並蓋印時間戳。</td>
+                <td><strong><span class="tc">六、第 3 棒 COD 批核</span><span class="en">6. Tier 3 Executive</span></strong></td>
+                <td><span class="role-badge"><span class="tc">高階營運主管</span><span class="en">COD / Executive</span></span></td>
+                <td>M365 Approvals (Teams / Outlook)</td>
+                <td><span class="tc">營運最高層最終核准，系統回寫 <code>CODAction</code> 並將總狀態鎖定為 <code>已批准歸檔</code>，完成不可篡改電子存證。</span><span class="en">Executive final sign-off writes <code>CODAction</code> and locks status as <code>Approved & Archived</code> with immutable audit trail.</span></td>
               </tr>
               <tr>
-                <td><strong>閉環通報</strong></td>
-                <td><span class="role-badge">系統閉環</span></td>
-                <td>Outlook (Office 365)</td>
-                <td>發送結案公函給申報員工，並副本 (Cc) 備查信箱，完成閉環。</td>
+                <td><strong><span class="tc">七、閉環通報</span><span class="en">7. Audit Closure</span></strong></td>
+                <td><span class="role-badge"><span class="tc">系統閉環</span><span class="en">System Closure</span></span></td>
+                <td>Office 365 Outlook + SharePoint</td>
+                <td><span class="tc">發送全線核准正式結案公函予申請人，並自動 Cc 人力資源歸檔信箱備查，依留存標籤保存至少 7 年。</span><span class="en">Sends official approval notice to applicant with auto-Cc to HR archive mailbox; retained for 7 years under retention policy.</span></td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      <!-- 合規與標準對齊 -->
+      <!-- 法律法規與 ISO 標準對齊 -->
       <section class="card">
-        <h2>⚖️ 法律法規與 ISO 標準合規 (Regulatory & ISO Standards)</h2>
+        <h2>
+          <span class="tc">⚖️ 法律法規與 ISO 國際標準對齊</span>
+          <span class="en">⚖️ Regulatory Alignment & ISO Standards Mapping</span>
+        </h2>
         <div class="callout">
-          <strong>合規適用性聲明 (Statutory Notice)</strong>：本系統展示架構依循常見個人隱私條例保護原則（如資料最小化、保存期限與加密防護）。
+          <span class="tc"><strong>合規適用性裁決 (Statutory Notice)</strong>：本系統架構依循香港《個人資料（私隱）條例》(Cap. 486) 六大保障資料原則及《僱傭條例》(Cap. 57) 工時紀錄要求設計，並精準界定技術邊界與豁免範圍。</span>
+          <span class="en"><strong>Statutory Applicability Notice</strong>: Designed in alignment with HK PDPO (Cap. 486) Data Protection Principles and Employment Ordinance (Cap. 57) recordkeeping mandates, with explicit regulatory boundary declarations.</span>
         </div>
         <div class="tech-list">
           <div class="tech-item">
-            <h3>ISO/IEC 27001 & 27701 (資安與隱私)</h3>
-            <p>清單執行 RBAC 最小權限原則，外部完全隔離；審核歷史記錄具備不可篡改性與標準時區審計軌跡。</p>
+            <h3>ISO/IEC 27001 & 27701 (<span class="tc">資安與私隱</span><span class="en">InfoSec & Privacy</span>)</h3>
+            <p><span class="tc">SharePoint 核心清單剔除全組織廣泛讀取權限，執行最小權限原則（RBAC）；每一級簽核均記錄 UPN 身分與不可篡改時間戳記。</span><span class="en">Core lists strip broad org read access to enforce RBAC least privilege; every approval tier logs UPN identity and immutable timestamps.</span></p>
           </div>
           <div class="tech-item">
-            <h3>ISO 9001:2015 (品質管治)</h3>
-            <p>落實條款 7.5 成文資訊管理，取代易丟失、不可追溯之傳統紙本，提升跨部門審批一致性與效率。</p>
+            <h3>ISO 9001:2015 (<span class="tc">品質管理體系</span><span class="en">Quality Management</span>)</h3>
+            <p><span class="tc">落實條款 7.5 成文資訊管理，將易遺失、字跡不清之傳統紙本表單轉化為具備完整版本歷程與結構化 Schema 之數位資產。</span><span class="en">Fulfills Clause 7.5 Documented Information by converting paper forms into version-controlled, schema-validated digital assets.</span></p>
           </div>
           <div class="tech-item">
-            <h3>ISO 45001:2018 (職安健體系)</h3>
-            <p>落實條款 6.1 & 8.1 危害辨識，精準監控非營運時段之單獨作業安全與超時工作健康風險。</p>
+            <h3>ISO 45001:2018 (<span class="tc">職安健管理體系</span><span class="en">OH&S Management</span>)</h3>
+            <p><span class="tc">落實條款 6.1 & 8.1 運行策劃與危害辨識，事前掌握深夜、假日或惡劣天氣下之單獨作業（Lone Working）與超時工作健康風險。</span><span class="en">Supports Clauses 6.1 & 8.1 Hazard Identification by providing visibility over night-shift, holiday, and lone-working fatigue risks.</span></p>
           </div>
           <div class="tech-item">
-            <h3>豁免範疇 (Exemption Notice)</h3>
-            <p>本系統為確定性規則引擎，無機器學習模型，<strong>宣告排除 EU AI Act / ISO 42001</strong>；僅展示企業內部架構，<strong>宣告排除境外跨境傳輸法規</strong>。</p>
+            <h3><span class="tc">明確豁免範疇</span><span class="en">Explicit Exemptions</span> (Non-AI & Local)</h3>
+            <p><span class="tc">100% 確定性規則引擎，無機器學習模型，<strong>宣告排除 EU AI Act / ISO 42001</strong>；全數留存於本地租戶雲端，<strong>宣告排除跨境傳輸法規</strong>。</span><span class="en">100% deterministic rule engine with zero ML models, <strong>scoping out EU AI Act / ISO 42001</strong>; confined to local tenant, <strong>zero cross-border export</strong>.</span></p>
           </div>
         </div>
       </section>
 
-      <!-- 技術架構 -->
+      <!-- 技術亮點與治理代碼化資產 -->
       <section class="card">
-        <h2>⚙️ 技術亮點 (Technical Implementation)</h2>
+        <h2>
+          <span class="tc">⚙️ 技術工程亮點與開源治理資產</span>
+          <span class="en">⚙️ Technical Engineering Highlights & Governance Artifacts</span>
+        </h2>
         <div class="tech-list">
           <div class="tech-item">
-            <h3>1. 零額外授權架構 (Zero-License)</h3>
-            <p>全流程僅調用 M365 商業版/企業版標準連接器，無需採購任何 Power Platform Premium 授權。</p>
+            <h3>1. <span class="tc">零額外授權架構</span><span class="en">Zero-License Architecture</span></h3>
+            <p><span class="tc">全流程僅調用 M365 商業標準版內建標準連接器（Forms、SharePoint、Users、Outlook、Approvals），零 Premium 授權支出。</span><span class="en">Uses solely M365 Standard Connectors (Forms, SharePoint, Users, Outlook, Approvals) with zero Premium licensing fees.</span></p>
           </div>
           <div class="tech-item">
-            <h3>2. 目錄級異常攔截 (Exception Handling)</h3>
-            <p>利用 Scope 錯誤捕獲配置（Run after has failed），主動攔截錯誤主管電郵，保障流程永不掛起。</p>
+            <h3>2. <span class="tc">目錄級異常攔截</span><span class="en">Scope Exception Handling</span></h3>
+            <p><span class="tc">配置 <code>Configure run after</code> 監聽 <code>Get user profile (V2)</code> 失敗與逾時狀態，3 秒內自動攔截無效電郵，杜絕流程掛起 30 天。</span><span class="en">Uses <code>Configure run after</code> on <code>Get user profile (V2)</code> failures/timeouts to auto-reject invalid emails in 3 seconds, preventing 30-day hangs.</span></p>
           </div>
           <div class="tech-item">
-            <h3>3. 動態多階狀態機 (State Machine)</h3>
-            <p>以明確狀態驅動審批生命週期，完整記錄每一階之 Action、Comments 與時間戳記。</p>
+            <h3>3. <span class="tc">獨立三級欄位冪等性</span><span class="en">Tiered Field Isolation</span></h3>
+            <p><span class="tc">資料庫拆解 <code>ManagerAction</code>、<code>HRAction</code> 與 <code>CODAction</code> 獨立欄位與簽核時間戳，確保多級意見互不覆寫。</span><span class="en">Separates <code>ManagerAction</code>, <code>HRAction</code>, and <code>CODAction</code> columns and timestamps so multi-tier audit trails never overwrite.</span></p>
           </div>
           <div class="tech-item">
-            <h3>4. 時區正規化 (Timezone Normalization)</h3>
-            <p>全系統強制透過 Convert time zone 轉為本地標準時間，杜絕雲端預設 UTC 引發之審計爭議。</p>
+            <h3>4. <span class="tc">雲端時區標準化</span><span class="en">HKT Timezone Normalization</span></h3>
+            <p><span class="tc">透過 <code>convertTimeZone</code> 函數統一將雲端 UTC 轉為 UTC+8 香港標準時間，消除深夜出勤紀錄之 8 小時時差爭議。</span><span class="en">Normalizes cloud UTC to UTC+8 Hong Kong Time via <code>convertTimeZone</code> expressions, eliminating 8-hour shift audit discrepancies.</span></p>
           </div>
+        </div>
+
+        <div class="artifact-links">
+          <a href="https://github.com/jackylawck/EnterpriseDemo-NOTAS/blob/main/README.md" target="_blank" rel="noopener"><span class="tc">中英文技術說明 (README)</span><span class="en">Documentation (README)</span></a>
+          <a href="https://github.com/jackylawck/EnterpriseDemo-NOTAS/blob/main/docs/PICS_Demo-Form.md" target="_blank" rel="noopener"><span class="tc">雙語私隱收集聲明 (PICS)</span><span class="en">Bilingual PICS Statement</span></a>
+          <a href="https://github.com/jackylawck/EnterpriseDemo-NOTAS/blob/main/docs/compliance-governance.md" target="_blank" rel="noopener"><span class="tc">合規審計與 ISO 映射矩陣</span><span class="en">Compliance & ISO Matrix</span></a>
+          <a href="https://github.com/jackylawck/EnterpriseDemo-NOTAS/blob/main/flows/README.md" target="_blank" rel="noopener"><span class="tc">Power Automate 流程定義說明</span><span class="en">Workflow Architecture Doc</span></a>
+          <a href="https://github.com/jackylawck/EnterpriseDemo-NOTAS/blob/main/flows/EnterpriseDemo-Attendance-Approval.json" target="_blank" rel="noopener"><span class="tc">自動化工作流邏輯 JSON</span><span class="en">Workflow Logic JSON</span></a>
+          <a href="https://github.com/jackylawck/EnterpriseDemo-NOTAS/blob/main/schemas/sharepoint-list-schema.json" target="_blank" rel="noopener"><span class="tc">SharePoint 清單結構 Schema</span><span class="en">SharePoint List Schema</span></a>
+          <a href="https://github.com/jackylawck/EnterpriseDemo-NOTAS/blob/main/schemas/column-formatting.schema.json" target="_blank" rel="noopener"><span class="tc">動態狀態看板 JSON 樣式</span><span class="en">Column Formatting JSON</span></a>
         </div>
       </section>
     </main>
 
     <footer>
-      <p>© 2026 Enterprise Architecture Demo | 系統架構展示設計：<a href="https://github.com/jackylawck" target="_blank" rel="noopener">Jacky Law</a></p>
-      <p style="margin-top: 6px; font-size: 0.8rem;">專為考勤內控審計與無紙化治理打造 (For Academic & Architectural Demo Purposes Only)</p>
+      <p>
+        <span class="tc">© 2026 Enterprise Architecture Demo | 系統架構展示設計：<a href="https://github.com/jackylawck" target="_blank" rel="noopener">羅子淇 (Jacky Law)</a></span>
+        <span class="en">© 2026 Enterprise Architecture Demo | Architected by <a href="https://github.com/jackylawck" target="_blank" rel="noopener">Jacky Law</a></span>
+      </p>
+      <p class="disclaimer">
+        <span class="tc"><strong>免責聲明：</strong>本專案為企業考勤內控與 Governance-as-Code 架構研究而設之通用示範（Enterprise Demo），文中所使用之姓名、職員編號、電郵端點及審批數據均為虛構佔位符。</span>
+        <span class="en"><strong>Disclaimer:</strong> This project is a generic enterprise demo created for attendance internal control and Governance-as-Code research. All employee names, staff IDs, email endpoints, and approval records shown are fictional placeholders.</span>
+      </p>
     </footer>
   </div>
 
+  <script>
+    (function () {
+      const DEPT_LIST = [
+        { val: "eng", tc: "工程組", en: "Engineering Team" },
+        { val: "site", tc: "施工組", en: "Construction Team" },
+        { val: "sed", tc: "安全及環保組", en: "Safety & Environmental Dept" },
+        { val: "hr", tc: "人力資源組", en: "Human Resources" },
+        { val: "admin", tc: "行政組", en: "Administration" },
+        { val: "it", tc: "資訊科技組", en: "Information Technology" },
+        { val: "audit", tc: "營運審計組", en: "Operations Audit" }
+      ];
+
+      function getHKTTimestamp() {
+        const now = new Date();
+        const utcMs = now.getTime() + now.getTimezoneOffset() * 60000;
+        const hkt = new Date(utcMs + 8 * 3600000);
+        const pad = (n) => String(n).padStart(2, "0");
+        return `${hkt.getFullYear()}-${pad(hkt.getMonth() + 1)}-${pad(hkt.getDate())} ${pad(hkt.getHours())}:${pad(hkt.getMinutes())}:${pad(hkt.getSeconds())}`;
+      }
+
+      function getCompactDate() {
+        const now = new Date();
+        const utcMs = now.getTime() + now.getTimezoneOffset() * 60000;
+        const hkt = new Date(utcMs + 8 * 3600000);
+        const pad = (n) => String(n).padStart(2, "0");
+        return `${hkt.getFullYear()}${pad(hkt.getMonth() + 1)}${pad(hkt.getDate())}`;
+      }
+
+      function createInitialState() {
+        return {
+          step: 1,
+          errorMsg: "",
+          form: {
+            applicantName: "陳大文",
+            staffNo: "EMP-2026-0108",
+            applicantEmail: "tai-man.chan@demo-enterprise.local",
+            dept: "eng",
+            managerEmail: "dept.manager@demo-enterprise.local",
+            workDate: "2026-11-21",
+            startTime: "22:00",
+            endTime: "02:00",
+            totalDays: "0.5",
+            reason: "執行核心伺服器安全修補及非營運時段系統切換測試",
+            picsAccepted: true
+          },
+          caseId: "",
+          submitTimeHKT: "",
+          directoryValid: true,
+          statusCode: "MGR_PENDING", // MGR_PENDING, HR_PENDING, COD_PENDING, APPROVED, REJECTED
+          tiers: {
+            mgr: { action: null, comment: "", time: "" },
+            hr: { action: null, comment: "", time: "" },
+            cod: { action: null, comment: "", time: "" }
+          },
+          draftComment: ""
+        };
+      }
+
+      let state = createInitialState();
+      const root = document.getElementById("simAppRoot");
+      const stepperBar = document.getElementById("stepperBar");
+
+      function isEn() {
+        return document.body.classList.contains("lang-en");
+      }
+
+      function escapeHtml(str) {
+        return String(str)
+          .replace(/&/g, "&")
+          .replace(/</g, "<")
+          .replace(/>/g, ">")
+          .replace(/"/g, """)
+          .replace(/'/g, "'");
+      }
+
+      function getDeptLabel(val) {
+        const found = DEPT_LIST.find((d) => d.val === val);
+        return found ? (isEn() ? found.en : found.tc) : val;
+      }
+
+      function getStatusBadgeHtml(code) {
+        const en = isEn();
+        if (code === "MGR_PENDING") {
+          return `<span class="sp-pill sp-mgr">${en ? "Manager Review" : "主管審批中"}</span>`;
+        }
+        if (code === "HR_PENDING") {
+          return `<span class="sp-pill sp-hr">${en ? "HR Review" : "HR審核中"}</span>`;
+        }
+        if (code === "COD_PENDING") {
+          return `<span class="sp-pill sp-cod">${en ? "COD Review" : "COD審批中"}</span>`;
+        }
+        if (code === "APPROVED") {
+          return `<span class="sp-pill sp-ok">${en ? "Approved & Archived" : "已批准歸檔"}</span>`;
+        }
+        return `<span class="sp-pill sp-rej">${en ? "Rejected" : "已駁回"}</span>`;
+      }
+
+      function getStatusText(code) {
+        const en = isEn();
+        const map = {
+          MGR_PENDING: en ? "Manager Review (主管審批中)" : "主管審批中",
+          HR_PENDING: en ? "HR Review (HR審核中)" : "HR審核中",
+          COD_PENDING: en ? "COD Review (COD審批中)" : "COD審批中",
+          APPROVED: en ? "Approved & Archived (已批准歸檔)" : "已批准歸檔",
+          REJECTED: en ? "Rejected (已駁回)" : "已駁回"
+        };
+        return map[code] || code;
+      }
+
+      function updateStepper() {
+        stepperBar.querySelectorAll(".step-pill").forEach((pill) => {
+          const s = Number(pill.dataset.step);
+          pill.classList.remove("current", "done");
+          if (s === state.step) pill.classList.add("current");
+          else if (s < state.step) pill.classList.add("done");
+        });
+      }
+
+      function validateManagerEmail(email) {
+        const trimmed = String(email || "").trim().toLowerCase();
+        // Simulated Entra ID corporate tenant domain validation
+        return /^[^\s@]+@(demo-enterprise\.local|example\.com)$/.test(trimmed);
+      }
+
+      function renderStep1() {
+        const en = isEn();
+        const f = state.form;
+        const deptOptions = DEPT_LIST.map((d) => {
+          const sel = f.dept === d.val ? "selected" : "";
+          return `<option value="${d.val}" ${sel}>${escapeHtml(en ? d.en : d.tc)}</option>`;
+        }).join("");
+
+        root.innerHTML = `
+          <div class="sim-header-row">
+            <h3>${en ? "📝 Stage 1: Microsoft Forms Submission (Demo-Form)" : "📝 第一階段：員工 Microsoft Forms 非營運時段申報"}</h3>
+            <div class="preset-group">
+              <button type="button" class="btn-mini" id="btnPresetValid">${en ? "✅ Load Valid Submission" : "✅ 填入正常申報示範"}</button>
+              <button type="button" class="btn-mini warn-preset" id="btnPresetInvalid">${en ? "⚠️ Test Invalid Manager Email (Scope Guard)" : "⚠️ 測試無效主管電郵 (觸發 Scope 防呆)"}</button>
+            </div>
+          </div>
+
+          <details class="expander" style="margin-top:0; margin-bottom:16px;">
+            <summary>${en ? "ℹ️ Personal Information Collection Statement (PICS) & Statutory Notice" : "ℹ️ 收集個人資料聲明 (PICS) 與法規遵循告知"}</summary>
+            <p style="margin-top:8px; margin-bottom:0; font-size:0.82rem; color:#9ca3af;">
+              ${en
+                ? "1. Purpose: Non-operating attendance verification, Cap. 57 statutory recordkeeping & ISO 45001 lone-working safety. 2. Directory Check: Manager email is validated against Entra ID; invalid emails trigger automated rejection. 3. Retention: Retained in SharePoint for 7 years."
+                : "1. 收集目的：核實非營運時段出勤、履行《僱傭條例》Cap. 57 法定備查義務及 ISO 45001 職安監控。2. 防呆機制：系統透過 Entra ID 驗證主管電郵，無效電郵將自動攔截退回。3. 保存期限：歸檔後保存至少 7 年。"}
+            </p>
+          </details>
+
+          <div class="sim-grid-3">
+            <div class="sim-field">
+              <label for="fName">${en ? "Applicant Name *" : "員工姓名 *"}</label>
+              <input class="sim-input" id="fName" type="text" value="${escapeHtml(f.applicantName)}">
+            </div>
+            <div class="sim-field">
+              <label for="fStaffNo">${en ? "Staff ID *" : "員工編號 *"}</label>
+              <input class="sim-input" id="fStaffNo" type="text" value="${escapeHtml(f.staffNo)}">
+            </div>
+            <div class="sim-field">
+              <label for="fDept">${en ? "Department *" : "組別 *"}</label>
+              <select class="sim-select" id="fDept">${deptOptions}</select>
+            </div>
+          </div>
+
+          <div class="sim-grid-3">
+            <div class="sim-field">
+              <label for="fAppEmail">${en ? "Applicant Corporate Email *" : "申請人公司電郵 *"}</label>
+              <input class="sim-input" id="fAppEmail" type="email" value="${escapeHtml(f.applicantEmail)}">
+            </div>
+            <div class="sim-field">
+              <label for="fMgrEmail">${en ? "Manager Email * (Valid: @demo-enterprise.local)" : "主管公司電郵 *（有效網域：@demo-enterprise.local）"}</label>
+              <input class="sim-input" id="fMgrEmail" type="email" value="${escapeHtml(f.managerEmail)}">
+            </div>
+            <div class="sim-field">
+              <label for="fWorkDate">${en ? "Attendance Date *" : "上班日期 *"}</label>
+              <input class="sim-input" id="fWorkDate" type="date" value="${escapeHtml(f.workDate)}">
+            </div>
+          </div>
+
+          <div class="sim-grid-3">
+            <div class="sim-field">
+              <label for="fStart">${en ? "Start Time *" : "開始時間 *"}</label>
+              <input class="sim-input" id="fStart" type="time" value="${escapeHtml(f.startTime)}">
+            </div>
+            <div class="sim-field">
+              <label for="fEnd">${en ? "End Time *" : "結束時間 *"}</label>
+              <input class="sim-input" id="fEnd" type="time" value="${escapeHtml(f.endTime)}">
+            </div>
+            <div class="sim-field">
+              <label for="fDays">${en ? "Total Days Claimed *" : "申報日數 *"}</label>
+              <input class="sim-input" id="fDays" type="number" step="0.5" min="0.5" value="${escapeHtml(f.totalDays)}">
+            </div>
+          </div>
+
+          <div class="sim-field">
+            <label for="fReason">${en ? "Duty Reason & Safety Arrangement *" : "非營運時段上班原因及工作安排 *"}</label>
+            <textarea class="sim-textarea" id="fReason">${escapeHtml(f.reason)}</textarea>
+          </div>
+
+          <div class="decl-box">
+            <label class="decl-label">
+              <input type="checkbox" id="fPics" ${f.picsAccepted ? "checked" : ""}>
+              <span>${en ? "I have read and accepted the Personal Information Collection Statement (PICS) and confirm the details above are accurate. *" : "本人已閱讀並同意上述《收集個人資料聲明 (PICS)》，並確認所填寫之出勤申報資料屬實。 *"}</span>
+            </label>
+          </div>
+
+          ${state.errorMsg ? `<div class="alert-box alert-warn" style="margin-top:14px;">⚠️ ${escapeHtml(state.errorMsg)}</div>` : ""}
+
+          <div class="action-bar">
+            <span style="font-size:0.82rem; color:#9ca3af;">${en ? "Trigger: When a new response is submitted (M365 Forms)" : "觸發器：當提交新的回應時 (Microsoft Forms 標準連接器)"}</span>
+            <button type="button" class="btn-primary" id="btnSubmitForm">${en ? "Submit Form & Trigger Power Automate ➔" : "提交表單並觸發 Power Automate ➔"}</button>
+          </div>
+        `;
+
+        document.getElementById("fName").addEventListener("input", (e) => { state.form.applicantName = e.target.value; });
+        document.getElementById("fStaffNo").addEventListener("input", (e) => { state.form.staffNo = e.target.value; });
+        document.getElementById("fDept").addEventListener("change", (e) => { state.form.dept = e.target.value; });
+        document.getElementById("fAppEmail").addEventListener("input", (e) => { state.form.applicantEmail = e.target.value; });
+        document.getElementById("fMgrEmail").addEventListener("input", (e) => { state.form.managerEmail = e.target.value; });
+        document.getElementById("fWorkDate").addEventListener("input", (e) => { state.form.workDate = e.target.value; });
+        document.getElementById("fStart").addEventListener("input", (e) => { state.form.startTime = e.target.value; });
+        document.getElementById("fEnd").addEventListener("input", (e) => { state.form.endTime = e.target.value; });
+        document.getElementById("fDays").addEventListener("input", (e) => { state.form.totalDays = e.target.value; });
+        document.getElementById("fReason").addEventListener("input", (e) => { state.form.reason = e.target.value; });
+        document.getElementById("fPics").addEventListener("change", (e) => { state.form.picsAccepted = e.target.checked; });
+
+        document.getElementById("btnPresetValid").addEventListener("click", () => {
+          state = createInitialState();
+          if (en) {
+            state.form.applicantName = "Chan Tai Man";
+            state.form.reason = "Core server security patching & non-operating cutover verification";
+          }
+          render();
+        });
+
+        document.getElementById("btnPresetInvalid").addEventListener("click", () => {
+          state = createInitialState();
+          if (en) {
+            state.form.applicantName = "Lee Siu Ming";
+            state.form.reason = "Weekend warehouse stocktake inspection";
+          } else {
+            state.form.applicantName = "李小明";
+            state.form.reason = "週末倉庫盤點及設備點檢";
+          }
+          state.form.staffNo = "EMP-2026-0215";
+          state.form.dept = "sed";
+          state.form.managerEmail = "nonexistent.boss@external-typo.com";
+          render();
+        });
+
+        document.getElementById("btnSubmitForm").addEventListener("click", () => {
+          if (!state.form.applicantName.trim() || !state.form.staffNo.trim() || !state.form.managerEmail.trim() || !state.form.reason.trim()) {
+            state.errorMsg = en
+              ? "Please complete all required fields before submitting!"
+              : "請先完整填寫所有必填欄位方可提交！";
+            render();
+            return;
+          }
+          if (!state.form.picsAccepted) {
+            state.errorMsg = en
+              ? "Please check the PICS privacy declaration box!"
+              : "請先勾選《收集個人資料聲明 (PICS)》同意方格！";
+            render();
+            return;
+          }
+
+          state.errorMsg = "";
+          state.submitTimeHKT = getHKTTimestamp();
+          state.caseId = `OT-${getCompactDate()}-108`;
+          state.directoryValid = validateManagerEmail(state.form.managerEmail);
+          state.tiers = {
+            mgr: { action: null, comment: "", time: "" },
+            hr: { action: null, comment: "", time: "" },
+            cod: { action: null, comment: "", time: "" }
+          };
+          state.draftComment = "";
+
+          if (!state.directoryValid) {
+            state.statusCode = "REJECTED";
+            state.tiers.mgr = {
+              action: "Rejected",
+              comment: en
+                ? "System Auto-Reject (Scope Guard): Manager email not found in Entra ID directory."
+                : "系統自動攔截 (Scope 防呆)：Entra ID 組織目錄查無此主管電郵。",
+              time: state.submitTimeHKT
+            };
+          } else {
+            state.statusCode = "MGR_PENDING";
+          }
+
+          state.step = 2;
+          render();
+          document.getElementById("simulatorSection").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
+
+      function renderStep2() {
+        const en = isEn();
+        const f = state.form;
+
+        if (!state.directoryValid) {
+          root.innerHTML = `
+            <div class="sim-header-row">
+              <h3>${en ? "🛡️ Stage 2: Entra ID Directory Validation & Scope Exception Handler" : "🛡️ 第二階段：Entra ID 目錄核實與 Scope 異常防禦"}</h3>
+              ${getStatusBadgeHtml(state.statusCode)}
+            </div>
+
+            <div class="alert-box alert-fail">
+              🚨 ${en
+                ? `Get user profile (V2) Failed for "${escapeHtml(f.managerEmail)}" — Exception Scope (runAfter: Failed) Triggered!`
+                : `Get user profile (V2) 查詢失敗：「${escapeHtml(f.managerEmail)}」不存在於內部目錄 — 已觸發棕色 Scope 異常攔截分支！`}
+            </div>
+
+            <div class="tier-stack">
+              <div class="tier-card rej-tier">
+                <div class="tier-head">
+                  <span class="tier-title">${en ? "1. SharePoint Status Auto-Updated" : "1. SharePoint 核心清單狀態自動回寫"}</span>
+                  <span class="tier-meta">${escapeHtml(state.submitTimeHKT)} (HKT)</span>
+                </div>
+                <p style="margin-bottom:0; font-size:0.84rem;">
+                  ${en
+                    ? `Case <code>${state.caseId}</code> immediately marked as <strong>Rejected</strong> so no orphan approval hangs for 30 days.`
+                    : `案件 <code>${state.caseId}</code> 已在 3 秒內自動寫入為 <strong>已駁回</strong>，避免流程因無效電郵而掛起 30 天消耗系統資源。`}
+                </p>
+              </div>
+              <div class="tier-card rej-tier">
+                <div class="tier-head">
+                  <span class="tier-title">${en ? "2. Outlook Auto-Rejection Notice Dispatched" : "2. Outlook 自動發送退回公函給申報員工"}</span>
+                  <span class="tier-meta">To: ${escapeHtml(f.applicantEmail)}</span>
+                </div>
+                <p style="margin-bottom:0; font-size:0.84rem;">
+                  ${en
+                    ? "Applicant notified to verify the supervisor's corporate email address and resubmit, followed by safe flow Termination."
+                    : "已發信提示申請人核對主管正確公司電郵後重新申報，並執行 Terminate 安全終止工作流。"}
+                </p>
+              </div>
+            </div>
+
+            <div class="action-bar">
+              <button type="button" class="btn-secondary" id="btnBackTo1">${en ? "⬅ Fix Manager Email & Resubmit" : "⬅ 返回修正主管電郵並重試"}</button>
+              <button type="button" class="btn-primary" id="btnGoStep3">${en ? "Inspect SharePoint Audit Ledger ➔" : "檢視 SharePoint 審計看板與存證 ➔"}</button>
+            </div>
+          `;
+
+          document.getElementById("btnBackTo1").addEventListener("click", () => {
+            state.step = 1;
+            render();
+          });
+          document.getElementById("btnGoStep3").addEventListener("click", () => {
+            state.step = 3;
+            render();
+          });
+          return;
+        }
+
+        // Valid Directory Path: Render Interactive 3-Tier Approvals
+        const tierConfigs = [
+          {
+            key: "mgr",
+            activeCode: "MGR_PENDING",
+            title: en ? "Tier 1: Department Manager Approval" : "第 1 棒：部門主管業務審批",
+            approver: f.managerEmail,
+            nextCode: "HR_PENDING"
+          },
+          {
+            key: "hr",
+            activeCode: "HR_PENDING",
+            title: en ? "Tier 2: HR Compliance Review" : "第 2 棒：人力資源組 (HR) 合規覆核",
+            approver: "hr-compliance@demo-enterprise.local",
+            nextCode: "COD_PENDING"
+          },
+          {
+            key: "cod",
+            activeCode: "COD_PENDING",
+            title: en ? "Tier 3: Executive / COD Final Sign-Off" : "第 3 棒：高階營運主管 (COD) 最終批核",
+            approver: "cod-office@demo-enterprise.local",
+            nextCode: "APPROVED"
+          }
+        ];
+
+        const tiersHtml = tierConfigs.map((tc) => {
+          const tData = state.tiers[tc.key];
+          const isCurrent = state.statusCode === tc.activeCode;
+          let cardClass = "tier-card";
+          if (isCurrent) cardClass += " active-tier";
+          else if (tData.action === "Approved") cardClass += " done-tier";
+          else if (tData.action === "Rejected") cardClass += " rej-tier";
+
+          let bodyHtml = "";
+          if (isCurrent) {
+            bodyHtml = `
+              <div class="tier-controls">
+                <input class="sim-input" type="text" id="activeTierComment" value="${escapeHtml(state.draftComment)}" placeholder="${en ? "Enter review comments (optional)..." : "輸入簽批意見（選填）..."}">
+                <button type="button" class="btn-approve" data-act="Approved" data-tier="${tc.key}" data-next="${tc.nextCode}">✅ ${en ? "Approve" : "批准 (Approve)"}</button>
+                <button type="button" class="btn-reject" data-act="Rejected" data-tier="${tc.key}">❌ ${en ? "Reject" : "駁回 (Reject)"}</button>
+              </div>`;
+          } else if (tData.action) {
+            bodyHtml = `
+              <div style="font-size:0.83rem; color:#d1d5db;">
+                <strong>${tData.action === "Approved" ? "✅ Approved" : "❌ Rejected"}</strong> •
+                <span>${escapeHtml(tData.time)} (HKT)</span> •
+                <span>${en ? "Comment" : "意見"}：${escapeHtml(tData.comment || (en ? "Confirmed" : "同意批核"))}</span>
+              </div>`;
+          } else {
+            bodyHtml = `<div style="font-size:0.82rem; color:#9ca3af;">${state.statusCode === "REJECTED" ? (en ? "Skipped (Workflow terminated at earlier tier)" : "已跳過（流程已於前一級駁回終止）") : (en ? "Waiting for previous tier sign-off..." : "等候上一級簽核完成後自動派發...")}</div>`;
+          }
+
+          return `
+            <div class="${cardClass}">
+              <div class="tier-head">
+                <span class="tier-title">${tc.title}</span>
+                <span class="tier-meta">${en ? "Assigned To" : "簽核人"}: <code>${escapeHtml(tc.approver)}</code></span>
+              </div>
+              ${bodyHtml}
+            </div>`;
+        }).join("");
+
+        const isTerminal = state.statusCode === "APPROVED" || state.statusCode === "REJECTED";
+
+        root.innerHTML = `
+          <div class="sim-header-row">
+            <h3>${en ? "⚡ Stage 2: Interactive 3-Tier Approvals State Machine" : "⚡ 第二階段：三級動態電子簽核控制台"}</h3>
+            ${getStatusBadgeHtml(state.statusCode)}
+          </div>
+
+          <div class="alert-box alert-pass">
+            ✅ ${en
+              ? `Entra ID Directory Verified (${escapeHtml(f.managerEmail)}) • Case ID: ${state.caseId} • HKT Timestamp: ${state.submitTimeHKT} • Receipt Email Sent.`
+              : `Entra ID 目錄核實通過 (${escapeHtml(f.managerEmail)}) • 單號：${state.caseId} • HKT 時間：${state.submitTimeHKT} • 已發送收件確認信。`}
+          </div>
+
+          <p style="font-size:0.85rem; color:#9ca3af; margin-bottom:10px;">
+            ${en
+              ? "Click Approve or Reject on each active M365 Approvals card below to simulate real-time SharePoint state progression:"
+              : "請在下方亮起藍框的 M365 Approvals 簽核卡片中點擊「批准」或「駁回」，即時模擬三級狀態機推進："}
+          </p>
+
+          <div class="tier-stack">${tiersHtml}</div>
+
+          ${isTerminal ? `
+            <div class="alert-box ${state.statusCode === "APPROVED" ? "alert-pass" : "alert-fail"}">
+              ${state.statusCode === "APPROVED"
+                ? (en ? "🎉 All 3 Tiers Approved! Final closure notice sent to applicant & Cc HR archive mailbox." : "🎉 三級全線核准歸檔！系統已發送正式結案公函予申報員工，並自動副本抄送 (Cc) 人力資源組留存。")
+                : (en ? "🛑 Request Rejected! Rejection notice sent to applicant and workflow closed." : "🛑 申請已駁回！系統已將駁回原因寫入 SharePoint 並發信通知申請人結案。")}
+            </div>` : ""}
+
+          <div class="action-bar">
+            <button type="button" class="btn-secondary" id="btnBackTo1">${en ? "⬅ Back to Stage 1" : "⬅ 返回第一階段"}</button>
+            <button type="button" class="btn-primary" id="btnGoStep3">${en ? "View SharePoint Audit Ledger & Receipt ➔" : "檢視 SharePoint 審計看板與存證 ➔"}</button>
+          </div>
+        `;
+
+        const commentEl = document.getElementById("activeTierComment");
+        if (commentEl) {
+          commentEl.addEventListener("input", (e) => { state.draftComment = e.target.value; });
+        }
+
+        root.querySelectorAll("[data-act]").forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            const act = e.target.dataset.act;
+            const tierKey = e.target.dataset.tier;
+            const nextCode = e.target.dataset.next;
+            const nowHKT = getHKTTimestamp();
+
+            state.tiers[tierKey] = {
+              action: act,
+              comment: state.draftComment.trim() || (act === "Approved" ? (en ? "Approved as requested" : "核實無誤，同意批核") : (en ? "Insufficient justification" : "申報事由未符非營運時段標準")),
+              time: nowHKT
+            };
+            state.draftComment = "";
+
+            if (act === "Approved") {
+              state.statusCode = nextCode;
+            } else {
+              state.statusCode = "REJECTED";
+            }
+            render();
+          });
+        });
+
+        document.getElementById("btnBackTo1").addEventListener("click", () => {
+          state.step = 1;
+          render();
+        });
+        document.getElementById("btnGoStep3").addEventListener("click", () => {
+          state.step = 3;
+          render();
+          document.getElementById("simulatorSection").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
+
+      function buildAuditReceiptText() {
+        const en = isEn();
+        const f = state.form;
+        const t = state.tiers;
+        if (en) {
+          return [
+            "Enterprise Demo Framework - Non-Operating Time Attendance Audit Record",
+            "Ref: DEMO-ATT-GOV-2026-V1 | SharePoint List: Demo_Non_Operating_OT",
+            "======================================================================",
+            `Case ID: ${state.caseId}`,
+            `Final Status: ${getStatusText(state.statusCode)}`,
+            `Submission Time (HKT): ${state.submitTimeHKT}`,
+            `Applicant: ${f.applicantName} (${f.staffNo}) | Dept: ${getDeptLabel(f.dept)}`,
+            `Applicant Email: ${f.applicantEmail}`,
+            `Manager Email: ${f.managerEmail} [Entra ID Verified: ${state.directoryValid ? "YES" : "NO"}]`,
+            `Attendance Schedule: ${f.workDate} | ${f.startTime} - ${f.endTime} (${f.totalDays} day(s))`,
+            `Duty Reason: ${f.reason}`,
+            "",
+            "[Multi-Tier Approval Audit Trail]",
+            `Tier 1 (Department Manager): ${t.mgr.action || "Pending"} | Time: ${t.mgr.time || "-"} | Comment: ${t.mgr.comment || "-"}`,
+            `Tier 2 (HR Compliance): ${t.hr.action || "Pending"} | Time: ${t.hr.time || "-"} | Comment: ${t.hr.comment || "-"}`,
+            `Tier 3 (Executive / COD): ${t.cod.action || "Pending"} | Time: ${t.cod.time || "-"} | Comment: ${t.cod.comment || "-"}`,
+            "",
+            "Retention Policy: Retained for 7 years in accordance with labor recordkeeping & ISO 27001 / 45001 controls."
+          ].join("\n");
+        }
+        return [
+          "Enterprise Demo Framework - 非營運時段考勤治理電子審計存證",
+          "受控編號：DEMO-ATT-GOV-2026-V1 | SharePoint 清單：Demo_Non_Operating_OT",
+          "======================================================================",
+          `申報編號 (Title)：${state.caseId}`,
+          `當前審核狀態 (Status)：${getStatusText(state.statusCode)}`,
+          `提交時間 (HKT)：${state.submitTimeHKT}`,
+          `申報員工：${f.applicantName} (${f.staffNo}) | 組別：${getDeptLabel(f.dept)}`,
+          `申請人電郵：${f.applicantEmail}`,
+          `主管公司電郵：${f.managerEmail} [Entra ID 目錄驗證：${state.directoryValid ? "通過" : "無效攔截"}]`,
+          `出勤時段：${f.workDate} | ${f.startTime} - ${f.endTime}（共 ${f.totalDays} 日）`,
+          `上班原因：${f.reason}`,
+          "",
+          "【三級動態審批審計軌跡 (Audit Trail)】",
+          `第 1 棒（部門主管）：${t.mgr.action || "待處理"} | 時間：${t.mgr.time || "-"} | 意見：${t.mgr.comment || "-"}`,
+          `第 2 棒（人力資源部）：${t.hr.action || "待處理"} | 時間：${t.hr.time || "-"} | 意見：${t.hr.comment || "-"}`,
+          `第 3 棒（高階營運主管 COD）：${t.cod.action || "待處理"} | 時間：${t.cod.time || "-"} | 意見：${t.cod.comment || "-"}`,
+          "",
+          "留存聲明：本紀錄已寫入企業受控 SharePoint 清單，依勞工法規及 ISO 27001 / 45001 體系要求保留至少 7 年。"
+        ].join("\n");
+      }
+
+      function renderStep3() {
+        const en = isEn();
+        const f = state.form;
+        const t = state.tiers;
+        const jsonPayload = JSON.stringify({
+          listName: "Demo_Non_Operating_OT",
+          Title: state.caseId,
+          ApplicantName: f.applicantName,
+          StaffNo: f.staffNo,
+          Department: getDeptLabel(f.dept),
+          ManagerEmail: f.managerEmail,
+          DirectoryVerified: state.directoryValid,
+          WorkDate: f.workDate,
+          TimeRange: `${f.startTime} - ${f.endTime}`,
+          TotalDays: Number(f.totalDays),
+          Status: getStatusText(state.statusCode),
+          ManagerAction: t.mgr.action,
+          ManagerActionDate: t.mgr.time || null,
+          HRAction: t.hr.action,
+          HRActionDate: t.hr.time || null,
+          CODAction: t.cod.action,
+          CODActionDate: t.cod.time || null
+        }, null, 2);
+
+        const receiptUri = `data:text/plain;charset=utf-8,${encodeURIComponent(buildAuditReceiptText())}`;
+        const receiptFilename = `${state.caseId}_Audit_Receipt.txt`;
+
+        root.innerHTML = `
+          <div class="sim-header-row">
+            <h3>${en ? "📊 Stage 3: SharePoint Audit Ledger & JSON Column Formatting" : "📊 第三階段：SharePoint 核心審計看板與電子存證"}</h3>
+            <span class="role-badge">List: Demo_Non_Operating_OT</span>
+          </div>
+
+          <p style="font-size:0.85rem; color:#9ca3af; margin-bottom:10px;">
+            ${en
+              ? "Live preview of the SharePoint Online list row styled with schemas/column-formatting.schema.json:"
+              : "以下即時還原 SharePoint Online 清單套用 <code>schemas/column-formatting.schema.json</code> 後的彩色狀態徽章效果："}
+          </p>
+
+          <div class="table-container" style="margin-bottom:16px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>${en ? "Applicant" : "員工姓名"}</th>
+                  <th>${en ? "Dept" : "組別"}</th>
+                  <th>${en ? "Schedule" : "出勤時段"}</th>
+                  <th>${en ? "Status (JSON Pill)" : "審核狀態 (JSON 渲染)"}</th>
+                  <th>${en ? "Audit Trail" : "簽核軌跡摘要"}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>${escapeHtml(state.caseId)}</code></td>
+                  <td>${escapeHtml(f.applicantName)}<br><span style="font-size:0.75rem; color:#9ca3af;">${escapeHtml(f.staffNo)}</span></td>
+                  <td>${escapeHtml(getDeptLabel(f.dept))}</td>
+                  <td>${escapeHtml(f.workDate)}<br><span style="font-size:0.75rem; color:#9ca3af;">${escapeHtml(f.startTime)}–${escapeHtml(f.endTime)} (${escapeHtml(f.totalDays)}d)</span></td>
+                  <td>${getStatusBadgeHtml(state.statusCode)}</td>
+                  <td style="font-size:0.78rem;">
+                    T1: ${escapeHtml(t.mgr.action || "-")}<br>
+                    T2: ${escapeHtml(t.hr.action || "-")}<br>
+                    T3: ${escapeHtml(t.cod.action || "-")}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <details class="expander" open>
+            <summary>${en ? "🔍 Inspect SharePoint Item JSON Payload (Governance-as-Code)" : "🔍 檢視 SharePoint 清單項目 JSON 結構 (Governance-as-Code)"}</summary>
+            <div class="json-preview">${escapeHtml(jsonPayload)}</div>
+          </details>
+
+          <div style="margin-top:14px;">
+            <a class="btn-secondary full" href="${receiptUri}" download="${escapeHtml(receiptFilename)}">
+              💾 ${en ? `Download Controlled Audit Receipt (${escapeHtml(receiptFilename)})` : `下載「${escapeHtml(receiptFilename)}」受控審計存證副本`}
+            </a>
+          </div>
+
+          <div class="action-bar">
+            <button type="button" class="btn-secondary" id="btnBackTo2">${en ? "⬅ Back to Approvals Console" : "⬅ 返回簽核控制台"}</button>
+            <button type="button" class="btn-primary" id="btnResetSim">${en ? "🔄 Start New Simulation" : "🔄 重置模擬器並發起新申報"}</button>
+          </div>
+        `;
+
+        document.getElementById("btnBackTo2").addEventListener("click", () => {
+          state.step = 2;
+          render();
+        });
+
+        document.getElementById("btnResetSim").addEventListener("click", () => {
+          state = createInitialState();
+          if (isEn()) {
+            state.form.applicantName = "Chan Tai Man";
+            state.form.reason = "Core server security patching & non-operating cutover verification";
+          }
+          render();
+          document.getElementById("simulatorSection").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
+
+      function render() {
+        updateStepper();
+        if (state.step === 1) renderStep1();
+        else if (state.step === 2) renderStep2();
+        else renderStep3();
+      }
+
+      document.getElementById("langBtn").addEventListener("click", () => {
+        document.body.classList.toggle("lang-en");
+        const en = isEn();
+        document.documentElement.lang = en ? "en" : "zh-HK";
+        if (en && state.form.applicantName === "陳大文") {
+          state.form.applicantName = "Chan Tai Man";
+          state.form.reason = "Core server security patching & non-operating cutover verification";
+        } else if (!en && state.form.applicantName === "Chan Tai Man") {
+          state.form.applicantName = "陳大文";
+          state.form.reason = "執行核心伺服器安全修補及非營運時段系統切換測試";
+        } else if (en && state.form.applicantName === "李小明") {
+          state.form.applicantName = "Lee Siu Ming";
+          state.form.reason = "Weekend warehouse stocktake inspection";
+        } else if (!en && state.form.applicantName === "Lee Siu Ming") {
+          state.form.applicantName = "李小明";
+          state.form.reason = "週末倉庫盤點及設備點檢";
+        }
+        render();
+      });
+
+      render();
+    })();
+  </script>
 </body>
 </html>
