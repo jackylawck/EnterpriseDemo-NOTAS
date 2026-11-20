@@ -67,7 +67,7 @@
 
   // Safe Unicode-escaped HTML sanitizer (immune to copy/paste entity decoding)
   function escapeHtml(str) {
-    return String(str)
+    return String(str ?? "")
       .replace(/\u0026/g, "\u0026amp;")
       .replace(/\u003c/g, "\u0026lt;")
       .replace(/\u003e/g, "\u0026gt;")
@@ -270,6 +270,16 @@
         render();
         return;
       }
+
+      const parsedDays = Number(state.form.totalDays);
+      if (!String(state.form.totalDays).trim() || !Number.isFinite(parsedDays) || parsedDays <= 0) {
+        state.errorMsg = en
+          ? "Please enter a valid total days claimed (≥ 0.5)!"
+          : "請輸入有效的申報日數（至少 0.5 日）！";
+        render();
+        return;
+      }
+
       if (!state.form.picsAccepted) {
         state.errorMsg = en
           ? "Please check the PICS privacy declaration box!"
