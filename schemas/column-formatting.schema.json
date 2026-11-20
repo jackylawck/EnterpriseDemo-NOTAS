@@ -1,0 +1,14 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "display": "inline-block",
+    "padding": "4px 12px",
+    "border-radius": "16px",
+    "font-weight": "600",
+    "font-size": "13px",
+    "color": "=if(@currentField == '已批准歸檔', '#166534', if(@currentField == '已駁回', '#991b1b', if(@currentField == 'COD審批中', '#9a3412', if(@currentField == 'HR審核中', '#5b21b6', '#1e40af'))))",
+    "background-color": "=if(@currentField == '已批准歸檔', '#dcfce7', if(@currentField == '已駁回', '#fee2e2', if(@currentField == 'COD審批中', '#ffedd5', if(@currentField == 'HR審核中', '#ede9fe', '#dbeafe'))))"
+  },
+  "txtContent": "@currentField"
+}
